@@ -13,7 +13,32 @@ use App\Http\Middleware\GuestMiddleware;
 
 use App\Http\Controllers\HomeController;
 
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\AreasController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+
+Route::get('/services', [ServicesController::class, 'index']);
+Route::get('/services/domestic', [ServicesController::class, 'domestic']);
+Route::get('/services/commercial', [ServicesController::class, 'commercial']);
+Route::get('/services/gutter', [ServicesController::class, 'gutter']);
+Route::get('/services/soffit-fascia', [ServicesController::class, 'soffitFascia']);
+
+Route::get('/testimonials', [TestimonialsController::class, 'index']);
+
+Route::get('/areas', [AreasController::class, 'index']);
+Route::get('/areas/south', [AreasController::class, 'south']);
+Route::get('/areas/east', [AreasController::class, 'east']);
+Route::get('/areas/central', [AreasController::class, 'central']);
+Route::get('/areas/north', [AreasController::class, 'north']);
+
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/team', [AboutController::class, 'team']);
+
+Route::get('/contact', [ContactController::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
