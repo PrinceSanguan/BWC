@@ -1,4 +1,5 @@
-import '../css/site.css';
+import React from 'react';
+import '../../css/site.css';
 
 export default function Home() {
   return (

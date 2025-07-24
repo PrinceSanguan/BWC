@@ -5,22 +5,26 @@ export default function WhatWeDoSection() {
     {
       icon: <ShieldCheck color="#003366" size={40} />,
       title: "Domestic Window Cleaning",
-      description: "Clean, streak-free windows every time – 6-weekly or one-off cleans, pure water pole system, internal cleaning on request, SMS reminders, no need to be home."
+      description: "Clean, streak-free windows every time – 6-weekly or one-off cleans, pure water pole system, internal cleaning on request, SMS reminders, no need to be home.",
+      image: "/images/pexels-matilda-wormwood-4098315.jpg"
     },
     {
       icon: <Zap color="#003366" size={40} />,
       title: "Commercial Window Cleaning",
-      description: "Safe, reliable cleaning for Bristol businesses – offices, shops, schools, up to 5 storeys, DBS-checked staff, scheduled or one-off, health & safety conscious."
+      description: "Safe, reliable cleaning for Bristol businesses – offices, shops, schools, up to 5 storeys, DBS-checked staff, scheduled or one-off, health & safety conscious.",
+      image: "/images/pexels-matilda-wormwood-4098323.jpg"
     },
     {
       icon: <Smartphone color="#003366" size={40} />,
       title: "Gutter Clearing",
-      description: "Manual or vacuum clearing, before/after photos on request, no mess left behind, ideal for autumn/winter/heavy rain."
+      description: "Manual or vacuum clearing, before/after photos on request, no mess left behind, ideal for autumn/winter/heavy rain.",
+      image: "/images/pexels-tima-miroshnichenko-6195953.jpg"
     },
     {
       icon: <Palette color="#003366" size={40} />,
       title: "Soffit, Fascia & Gutter Face Cleaning",
-      description: "Restore your home’s exterior – clean soffits, fascias & gutter exteriors, remove green staining, algae, grime, great as a one-off or with window cleans."
+      description: "Restore your home’s exterior – clean soffits, fascias & gutter exteriors, remove green staining, algae, grime, great as a one-off or with window cleans.",
+      image: "/images/pexels-tima-miroshnichenko-6195956.jpg"
     }
   ];
 
@@ -89,61 +93,102 @@ export default function WhatWeDoSection() {
           gap: '2.5rem'
         }}>
           {features.map((feature, index) => (
-            <div key={index} style={{
-              background: 'linear-gradient(135deg, #001a33 0%, #003366 100%)',
-              padding: '2rem',
-              borderRadius: '8px',
-              border: '2px solid #003366',
-              color: 'white',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              cursor: 'pointer',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-5px)';
-              e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 51, 102, 0.3)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}>
-              {/* Icon */}
-              <div style={{
-                width: '70px',
-                height: '70px',
-                background: '#ffd600',
-                borderRadius: '50%',
+            <div
+              key={index}
+              className="what-we-do-card"
+              style={{
+                background: 'linear-gradient(135deg, #001a33 0%, #003366 100%)',
+                padding: '2rem',
+                borderRadius: '8px',
+                border: '2px solid #003366',
+                color: 'white',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                cursor: 'pointer',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '1.5rem'
-              }}>
-                {feature.icon}
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseOver={e => {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 51, 102, 0.3)';
+                const overlay = e.currentTarget.querySelector('.what-we-do-card-black-overlay');
+                if (overlay && overlay instanceof HTMLElement) overlay.style.opacity = '0.3';
+              }}
+              onMouseOut={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+                const overlay = e.currentTarget.querySelector('.what-we-do-card-black-overlay');
+                if (overlay && overlay instanceof HTMLElement) overlay.style.opacity = '0';
+              }}
+            >
+              {/* Black Overlay */}
+              <div
+                className="what-we-do-card-black-overlay"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  background: '#000',
+                  opacity: 0,
+                  transition: 'opacity 0.3s ease',
+                  zIndex: 3,
+                  pointerEvents: 'none',
+                  borderRadius: '8px'
+                }}
+              />
+              {/* Image Overlay */}
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="what-we-do-card-img"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '8px',
+                  opacity: 0,
+                  transition: 'opacity 0.3s ease',
+                  zIndex: 2
+                }}
+              />
+              {/* Card Content */}
+              <div style={{ position: 'relative', zIndex: 3, width: '100%' }}>
+                {/* Title */}
+                <h3 style={{
+                  fontSize: '1.3rem',
+                  fontWeight: '600',
+                  color: 'white',
+                  marginBottom: '1rem',
+                  fontFamily: '"Montserrat", sans-serif'
+                }}>
+                  {feature.title}
+                </h3>
+                {/* Description */}
+                <p style={{
+                  fontSize: '0.95rem',
+                  color: 'white',
+                  opacity: '0.9',
+                  lineHeight: '1.6',
+                  fontWeight: '400'
+                }}>
+                  {feature.description}
+                </p>
               </div>
-              
-              {/* Title */}
-              <h3 style={{
-                fontSize: '1.3rem',
-                fontWeight: '600',
-                color: 'white',
-                marginBottom: '1rem',
-                fontFamily: '"Montserrat", sans-serif'
-              }}>
-                {feature.title}
-              </h3>
-              
-              {/* Description */}
-              <p style={{
-                fontSize: '0.95rem',
-                color: 'white',
-                opacity: '0.9',
-                lineHeight: '1.6',
-                fontWeight: '400'
-              }}>
-                {feature.description}
-              </p>
+              <style>{`
+                .what-we-do-card:hover .what-we-do-card-img {
+                  opacity: 1 !important;
+                }
+                .what-we-do-card .what-we-do-card-img {
+                  pointer-events: none;
+                }
+              `}</style>
             </div>
           ))}
         </div>

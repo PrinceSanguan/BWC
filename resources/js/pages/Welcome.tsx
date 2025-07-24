@@ -3,9 +3,7 @@ import Header from '../landingpage/Header';
 import Footer from '../landingpage/Footer';
 import HeroSection from '../landingpage/HeroSection';
 import AboutUsSection from '../landingpage/AboutUsSection';
-import ServicesSection from '../landingpage/ServicesSection';
 import ContactUsSection from '../landingpage/ContactUsSection';
-import WhatMoreWeDoSection from '../landingpage/WhatMoreWeDoSection';
 import MeetTheTeamSection from '../landingpage/MeetTheTeamSection';
 import WhatWeDoSection from '../landingpage/WhatWeDoSection';
 import CTASection from '../landingpage/CTASection';
@@ -20,7 +18,7 @@ export default function Welcome() {
       <Header />
       <HeroSection />
       <AboutUsSection />
-        <WhatWeDoSection />
+      <WhatWeDoSection />
       <ContactUsSection />
       <MeetTheTeamSection />
       <CTASection />

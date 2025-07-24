@@ -29,7 +29,7 @@ export default function Footer() {
         <div style={{
           color: 'white'
         }}>
-          © Copyright Premium Barbershop 2025 | Crafted with Excellence
+          © Copyright Premium Choros.io | Crafted by John Louise Jiz De Ortega
         </div>
 
         {/* Social Media Icons */}

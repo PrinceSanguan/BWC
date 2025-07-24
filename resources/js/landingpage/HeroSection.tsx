@@ -3,50 +3,63 @@ import { Calendar } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <div className="h-screen text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #003366 0%, #004080 50%, #001a33 100%)' }}>
-      {/* Background Pattern Overlay */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237ecbff' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='15' cy='15' r='1'/%3E%3Ccircle cx='45' cy='45' r='1'/%3E%3Ccircle cx='15' cy='45' r='1'/%3E%3Ccircle cx='45' cy='15' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}
+    <div className="h-screen text-white relative overflow-hidden">
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/videos/12761815_3364_1440_30fps.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
       />
-      
       {/* Main Hero Content */}
       <main className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         {/* Small subtitle */}
         <div className="mb-8">
-          <p className="text-sm font-medium tracking-widest uppercase" style={{ color: '#ffd600' }}>
+          <span
+            style={{
+              display: 'inline-block',
+              background: 'rgba(0, 51, 102, 0.85)',
+              color: '#ffd600',
+              borderRadius: '999px',
+              padding: '0.4em 1.2em',
+              fontSize: '0.95rem',
+              fontWeight: 600,
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.10)'
+            }}
+          >
             Bristol's Trusted Window Cleaning
-          </p>
+          </span>
         </div>
         
         {/* Main headline */}
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-12 max-w-4xl">
-          <span className="block">Professional Exterior Cleaning</span>
-          <span className="block" style={{ color: '#7ecbff' }}>For Homes & Businesses</span>
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-12 max-w-4xl" style={{ color: '#fff' }}>
+          <span className="block" style={{ color: '#fff' }}>Professional Exterior Cleaning</span>
+          <span className="block" style={{ color: '#fff' }}>For Homes & Businesses</span>
         </h1>
         
         {/* CTA Button */}
         <button 
           className="px-8 py-4 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
           style={{
-            background: '#ffd600',
-            color: '#003366',
+            background: '#003366',
+            color: '#ffd600',
             border: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            boxShadow: '0 4px 15px rgba(0, 51, 102, 0.3)'
           }}
           onMouseOver={(e) => {
-            const btn = e.target as HTMLButtonElement;
-            btn.style.background = '#7ecbff';
-            btn.style.color = 'white';
-            btn.style.boxShadow = '0 10px 25px rgba(126, 203, 255, 0.3)';
+            e.currentTarget.style.background = '#ffd600';
+            e.currentTarget.style.color = 'white';
+            e.currentTarget.style.boxShadow = '0 10px 25px rgba(255, 214, 0, 0.3)';
           }}
           onMouseOut={(e) => {
-            const btn = e.target as HTMLButtonElement;
-            btn.style.background = '#ffd600';
-            btn.style.color = '#003366';
-            btn.style.boxShadow = '0 4px 15px rgba(255, 214, 0, 0.3)';
+            e.currentTarget.style.background = '#003366';
+            e.currentTarget.style.color = '#ffd600';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 51, 102, 0.3)';
           }}
         >
           <Calendar className="w-5 h-5" />
@@ -79,9 +92,22 @@ export default function HeroSection() {
         style={{ borderColor: '#ffd600' }}
       ></div>
       
-      {/* Enhanced gradient overlay for better text readability */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'linear-gradient(to bottom, rgba(0,51,102,0.2) 0%, transparent 30%, transparent 70%, rgba(0,51,102,0.3) 100%)'
+      {/* Vignette overlays for top, bottom, left, and right */}
+      {/* Top vignette */}
+      <div className="pointer-events-none absolute left-0 right-0 top-0 h-32 z-20" style={{
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.45), transparent)'
+      }}></div>
+      {/* Bottom vignette */}
+      <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-32 z-20" style={{
+        background: 'linear-gradient(to top, rgba(0,0,0,0.45), transparent)'
+      }}></div>
+      {/* Left vignette */}
+      <div className="pointer-events-none absolute top-0 bottom-0 left-0 w-24 z-20" style={{
+        background: 'linear-gradient(to right, rgba(0,0,0,0.35), transparent)'
+      }}></div>
+      {/* Right vignette */}
+      <div className="pointer-events-none absolute top-0 bottom-0 right-0 w-24 z-20" style={{
+        background: 'linear-gradient(to left, rgba(0,0,0,0.35), transparent)'
       }}></div>
       
       {/* Light accent beams */}

@@ -3,133 +3,316 @@ import { Mail, Phone } from 'lucide-react';
 export default function ContactUsSection() {
   return (
     <section style={{
-      background: 'linear-gradient(135deg, #003366 0%, #004080 50%, #7ecbff 100%)',
-      padding: '4rem 2rem',
-      textAlign: 'center',
-      fontFamily: '"Open Sans", sans-serif',
       position: 'relative',
-      overflow: 'hidden'
+      padding: '4rem 2rem',
+      minHeight: '80vh',
+      display: 'flex',
+      alignItems: 'center',
+      overflow: 'hidden',
     }}>
-      {/* Background Pattern */}
+      {/* Background image with overlay */}
       <div style={{
         position: 'absolute',
-        top: '0',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        background: 'url("data:image/svg+xml,%3Csvg width=\"80\" height=\"80\" viewBox=\"0 0 80 80\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"40\" cy=\"40\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-        opacity: '0.4'
-      }}></div>
-
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 0,
+        background: `linear-gradient(rgba(30, 41, 59, 0.55), rgba(30, 41, 59, 0.55)), url('/images/pexels-pixabay-34537.jpg') center/cover no-repeat`,
+        backgroundAttachment: 'fixed',
+        pointerEvents: 'none',
+      }} />
       <div style={{
-        maxWidth: '800px',
+        maxWidth: '1200px',
         margin: '0 auto',
+        width: '100%',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '4rem',
+        alignItems: 'center',
         position: 'relative',
-        zIndex: '1'
+        zIndex: 1,
       }}>
-        {/* Main Heading */}
-        <h2 style={{
-          fontSize: '2.5rem',
-          fontWeight: '700',
-          color: 'white',
-          marginBottom: '1.5rem',
-          fontFamily: 'Montserrat, sans-serif',
-          textShadow: '2px 2px 4px rgba(0,0,0,0.2)',
-          letterSpacing: '0.5px'
-        }}>
-          Get a Free Quote Today
-        </h2>
+        {/* Left Column - Content */}
+        <div>
+          <h2 style={{
+            fontSize: '2.5rem',
+            fontWeight: '600',
+            color: '#fff',
+            marginBottom: '1.5rem',
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+            lineHeight: '1.2',
+            textShadow: '0 2px 8px rgba(0,0,0,0.18)'
+          }}>
+            Get a Free Quote Today
+          </h2>
 
-        {/* Subtitle */}
-        <p style={{
-          fontSize: '1.2rem',
-          color: 'rgba(255,255,255,0.9)',
-          marginBottom: '2rem',
-          fontWeight: '400',
-          lineHeight: '1.5',
-          textShadow: '1px 1px 2px rgba(0,0,0,0.1)'
-        }}>
-          We'll get back to you quickly with a no-obligation quote. You don’t need to be home for most jobs — just provide access.
-        </p>
+          <p style={{
+            fontSize: '1rem',
+            color: '#fff',
+            marginBottom: '1rem',
+            lineHeight: '1.6',
+            textShadow: '0 2px 8px rgba(0,0,0,0.18)'
+          }}>
+            We'll get back to you quickly with a no-obligation quote. You don't need to be home for most jobs — just provide access.
+          </p>
 
-        {/* Contact Information */}
-        <div style={{marginBottom: '2rem', color: 'white', fontSize: '1.1rem', display: 'flex', justifyContent: 'center', gap: '2rem'}}>
-          <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
-            <Phone color="#ffd600" size={24} />
-            <span>Phone: <a href="tel:1800222000" style={{color: '#ffd600', textDecoration: 'none'}}>1 800 222 000</a></span>
-          </div>
-          <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
-            <Mail color="#ffd600" size={24} />
-            <span>Email: <a href="mailto:info@invisiblewindowcleaning.com" style={{color: '#ffd600', textDecoration: 'none'}}>info@invisiblewindowcleaning.com</a></span>
-          </div>
-          <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
-            <Phone color="#ffd600" size={24} />
-            <span>WhatsApp: <a href="https://wa.me/1800222000" style={{color: '#ffd600', textDecoration: 'none'}}>Chat on WhatsApp</a></span>
+          {/* Contact Information */}
+          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Phone color="#fff" size={20} />
+              <span style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
+                Phone: <a href="tel:1800222000" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>1 800 222 000</a>
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Mail color="#fff" size={20} />
+              <span style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
+                Email: <a href="mailto:info@invisiblewindowcleaning.com" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>info@invisiblewindowcleaning.com</a>
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <Phone color="#fff" size={20} />
+              <span style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
+                WhatsApp: <a href="https://wa.me/1800222000" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>Chat on WhatsApp</a>
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Quote Request Form */}
-        <form style={{background: 'rgba(255,255,255,0.1)', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,51,102,0.08)', marginBottom: '2rem'}}>
-          <div style={{marginBottom: '1rem'}}>
-            <label style={{display: 'block', color: 'white', fontWeight: 600}}>Name</label>
-            <input type="text" style={{width: '100%', padding: '0.8rem', borderRadius: '6px', border: '1px solid #7ecbff', background: 'rgba(255,255,255,0.2)', color: 'white'}} />
+        {/* Right Column - Form */}
+        <div style={{
+          background: 'white',
+          padding: '2rem',
+          borderRadius: '12px',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+        }}>
+          <div>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: '1fr 1fr', 
+              gap: '1rem',
+              marginBottom: '1rem'
+            }}>
+              <div>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  color: '#374151',
+                  marginBottom: '0.5rem'
+                }}>
+                  Name*
+                </label>
+                <input
+                  type="text"
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '1rem',
+                    background: '#f9fafb',
+                    outline: 'none',
+                    transition: 'border-color 0.2s',
+                    boxSizing: 'border-box'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#6366f1'}
+                  onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                />
+              </div>
+              <div>
+                <label style={{
+                  display: 'block',
+                  fontSize: '0.875rem',
+                  fontWeight: '500',
+                  color: '#374151',
+                  marginBottom: '0.5rem'
+                }}>
+                  Address / Area
+                </label>
+                <input
+                  type="text"
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '6px',
+                    fontSize: '1rem',
+                    background: '#f9fafb',
+                    outline: 'none',
+                    transition: 'border-color 0.2s',
+                    boxSizing: 'border-box'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#6366f1'}
+                  onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                />
+              </div>
+            </div>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '500',
+                color: '#374151',
+                marginBottom: '0.5rem'
+              }}>
+                Email*
+              </label>
+              <input
+                type="email"
+                required
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  fontSize: '1rem',
+                  background: '#f9fafb',
+                  outline: 'none',
+                  transition: 'border-color 0.2s',
+                  boxSizing: 'border-box'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
+                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '500',
+                color: '#374151',
+                marginBottom: '0.5rem'
+              }}>
+                Service(s) needed
+              </label>
+              <input
+                type="text"
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  fontSize: '1rem',
+                  background: '#f9fafb',
+                  outline: 'none',
+                  transition: 'border-color 0.2s',
+                  boxSizing: 'border-box'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
+                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '500',
+                color: '#374151',
+                marginBottom: '0.5rem'
+              }}>
+                Preferred contact method
+              </label>
+              <input
+                type="text"
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  fontSize: '1rem',
+                  background: '#f9fafb',
+                  outline: 'none',
+                  transition: 'border-color 0.2s',
+                  boxSizing: 'border-box'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
+                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+              />
+            </div>
+
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label style={{
+                display: 'block',
+                fontSize: '0.875rem',
+                fontWeight: '500',
+                color: '#374151',
+                marginBottom: '0.5rem'
+              }}>
+                Optional notes
+              </label>
+              <textarea
+                rows={4}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '6px',
+                  fontSize: '1rem',
+                  background: '#f9fafb',
+                  outline: 'none',
+                  transition: 'border-color 0.2s',
+                  resize: 'vertical',
+                  boxSizing: 'border-box'
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
+                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+              />
+            </div>
+
+            <button
+              type="submit"
+              style={{
+                background: '#003366',
+                color: 'white',
+                fontWeight: '600',
+                padding: '0.75rem 2rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                transition: 'background-color 0.2s'
+              }}
+              onMouseOver={(e) => ((e.target as HTMLButtonElement).style.backgroundColor = '#001a33')}
+              onMouseOut={(e) => ((e.target as HTMLButtonElement).style.backgroundColor = '#003366')}
+            >
+              Submit
+            </button>
           </div>
-          <div style={{marginBottom: '1rem'}}>
-            <label style={{display: 'block', color: 'white', fontWeight: 600}}>Address / Area</label>
-            <input type="text" style={{width: '100%', padding: '0.8rem', borderRadius: '6px', border: '1px solid #7ecbff', background: 'rgba(255,255,255,0.2)', color: 'white'}} />
-          </div>
-          <div style={{marginBottom: '1rem'}}>
-            <label style={{display: 'block', color: 'white', fontWeight: 600}}>Service(s) needed</label>
-            <input type="text" style={{width: '100%', padding: '0.8rem', borderRadius: '6px', border: '1px solid #7ecbff', background: 'rgba(255,255,255,0.2)', color: 'white'}} />
-          </div>
-          <div style={{marginBottom: '1rem'}}>
-            <label style={{display: 'block', color: 'white', fontWeight: 600}}>Preferred contact method</label>
-            <input type="text" style={{width: '100%', padding: '0.8rem', borderRadius: '6px', border: '1px solid #7ecbff', background: 'rgba(255,255,255,0.2)', color: 'white'}} />
-          </div>
-          <div style={{marginBottom: '1rem'}}>
-            <label style={{display: 'block', color: 'white', fontWeight: 600}}>Optional notes</label>
-            <textarea style={{width: '100%', padding: '0.8rem', borderRadius: '6px', border: '1px solid #7ecbff', background: 'rgba(255,255,255,0.2)', color: 'white'}} rows={3} />
-          </div>
-          <button type="submit" style={{background: '#ffd600', color: '#003366', fontWeight: 700, padding: '1rem 2rem', borderRadius: '6px', border: 'none', cursor: 'pointer'}}>
-            Request Quote
-          </button>
-        </form>
+        </div>
       </div>
 
       {/* Responsive Design */}
       <style>
         {`
           @media (max-width: 768px) {
-            section > div > div:nth-child(4) {
-              flex-direction: column !important;
-              gap: 1rem !important;
-            }
-            
-            section > div > div:nth-child(4) > button {
-              width: 100% !important;
-            }
-            
-            h2 {
-              font-size: 2.2rem !important;
+            section > div {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
             }
             
             section {
-              padding: 3rem 1rem !important;
+              padding: 2rem 1rem !important;
+            }
+            
+            h2 {
+              font-size: 2rem !important;
             }
           }
           
           @media (max-width: 480px) {
-            h2 {
-              font-size: 1.8rem !important;
-            }
-            
-            section > div > div:last-child {
+            .form-grid {
               grid-template-columns: 1fr !important;
             }
-          }
-          
-          input::placeholder {
-            color: rgba(255,255,255,0.7);
+            
+            h2 {
+              font-size: 1.75rem !important;
+            }
           }
         `}
       </style>
