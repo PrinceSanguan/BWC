@@ -129,7 +129,7 @@ export default function Header() {
             className="logo-box"
           >
             <img
-              src="/images/InvisibleLogo-1.svg"
+              src="/images/8f11858a-851a-45be-94a6-0df380a91a71-removebg-preview.png"
               alt="Logo"
               style={{ 
                 width: 'auto', 

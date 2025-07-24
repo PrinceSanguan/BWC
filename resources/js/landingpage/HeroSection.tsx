@@ -21,7 +21,7 @@ export default function HeroSection() {
             style={{
               display: 'inline-block',
               background: 'rgba(0, 51, 102, 0.85)',
-              color: '#ffd600',
+              color: 'white',
               borderRadius: '999px',
               padding: '0.4em 1.2em',
               fontSize: '0.95rem',
@@ -46,7 +46,7 @@ export default function HeroSection() {
           className="px-8 py-4 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center space-x-2"
           style={{
             background: '#003366',
-            color: '#ffd600',
+            color: 'white',
             border: 'none',
             cursor: 'pointer',
             boxShadow: '0 4px 15px rgba(0, 51, 102, 0.3)'
@@ -58,7 +58,7 @@ export default function HeroSection() {
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.background = '#003366';
-            e.currentTarget.style.color = '#ffd600';
+            e.currentTarget.style.color = 'white';
             e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 51, 102, 0.3)';
           }}
         >
