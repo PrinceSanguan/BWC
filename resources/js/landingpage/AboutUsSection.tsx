@@ -104,6 +104,9 @@ export default function AboutUsSection() {
                   alt="Local, trusted, and friendly team"
                   className="about-image"
                   loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="400"
                 />
                 <div className="about-image-overlay">
                   <span style={{fontWeight: 600, fontSize: '1.15rem'}}>Local, trusted, and friendly team</span><br/>
@@ -146,24 +149,28 @@ export default function AboutUsSection() {
                         key={member.id}
                         className="team-card"
                       >
-                        {/* Member Avatar */}
+                        {/* Member Avatar with image for better LCP */}
                         <div className="team-avatar">
-                          {member.name[0]}
+                          <img
+                            src={member.image}
+                            alt={`Photo of ${member.name}`}
+                            loading="lazy"
+                            decoding="async"
+                            width="80"
+                            height="80"
+                            style={{ borderRadius: '50%', objectFit: 'cover', background: '#e6f0fa' }}
+                          />
                         </div>
-                        
                         <div className="team-info">
                           <h3 className="team-name">
                             {member.name}
                           </h3>
-                          
                           <p className="team-role">
                             {member.role}
                           </p>
-                          
                           <p className="team-description">
                             {member.description}
                           </p>
-                          
                           <div className="team-specialties">
                             {member.specialties.map((specialty, index) => (
                               <span 
@@ -173,25 +180,6 @@ export default function AboutUsSection() {
                                 {specialty}
                               </span>
                             ))}
-                          </div>
-                        </div>
-
-                        {/* Hover Overlay */}
-                        <div className="team-card-overlay">
-                          <div style={{ textAlign: 'center', color: 'white' }}>
-                            <div style={{
-                              fontSize: '1.2rem',
-                              fontWeight: '600',
-                              marginBottom: '0.5rem'
-                            }}>
-                              Professional Window Cleaner
-                            </div>
-                            <small style={{
-                              opacity: '0.8',
-                              fontSize: '0.9rem'
-                            }}>
-                              Serving Bristol with excellence
-                            </small>
                           </div>
                         </div>
                       </div>

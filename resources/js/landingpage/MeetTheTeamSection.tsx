@@ -80,7 +80,17 @@ const TestimonialsSection = memo(function TestimonialsSection() {
         {/* Avatar and Profile Section */}
         <div className="testimonial-profile">
           {/* Left Avatar */}
-          <div className="testimonial-avatar" aria-hidden="true"></div>
+          <div className="testimonial-avatar">
+            <img
+              src={testimonials[currentTestimonial].avatar}
+              alt={`Photo of ${testimonials[currentTestimonial].name}`}
+              loading="lazy"
+              decoding="async"
+              width="60"
+              height="60"
+              style={{ borderRadius: '50%', objectFit: 'cover', background: '#e6f0fa' }}
+            />
+          </div>
 
           {/* Center Avatar (Active) */}
           <div className="testimonial-avatar-main">

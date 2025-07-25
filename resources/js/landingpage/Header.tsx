@@ -38,8 +38,12 @@ export default function Header() {
           <div className="logo-box">
             <img
               src="/images/8f11858a-851a-45be-94a6-0df380a91a71-removebg-preview.png"
-              alt="Logo"
+              alt="Invisible Window Cleaning Logo"
               className="logo-image"
+              loading="lazy"
+              decoding="async"
+              width="120"
+              height="40"
             />
           </div>
         </div>

@@ -144,12 +144,16 @@ export default function Welcome() {
         <link rel="dns-prefetch" href="//fonts.bunny.net" />
         
         {/* Optimized font loading */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" 
-          rel="stylesheet"
-          media="print"
-          onLoad={(e) => { (e.target as HTMLLinkElement).media = 'all'; }}
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <style>{`@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: local('Montserrat'), url('https://fonts.gstatic.com/s/montserrat/v25/JTUQjIg1_i6t8kCHKm45_QpRyS7m.woff2') format('woff2'); }`}</style>
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
         
         {/* Preload critical resources */}

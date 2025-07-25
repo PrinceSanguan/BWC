@@ -79,6 +79,8 @@ const WhatWeDoSection = memo(function WhatWeDoSection() {
                   className="service-card-image"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </picture>
               
