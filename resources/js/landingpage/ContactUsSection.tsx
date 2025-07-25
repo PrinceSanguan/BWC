@@ -1,321 +1,191 @@
 import { Mail, Phone } from 'lucide-react';
+import { memo, useState, useCallback } from 'react';
 
-export default function ContactUsSection() {
+const ContactUsSection = memo(function ContactUsSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    address: '',
+    email: '',
+    services: '',
+    contact_method: '',
+    notes: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  }, []);
+
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log('Form submitted:', formData);
+      // Reset form or show success message
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [formData]);
+
   return (
-    <section style={{
-      position: 'relative',
-      padding: '4rem 2rem',
-      minHeight: '80vh',
-      display: 'flex',
-      alignItems: 'center',
-      overflow: 'hidden',
-    }}>
+    <section className="contact-section window-cleaning-theme">
       {/* Background image with overlay */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0,
-        background: `linear-gradient(rgba(30, 41, 59, 0.55), rgba(30, 41, 59, 0.55)), url('/images/pexels-pixabay-34537.jpg') center/cover no-repeat`,
-        backgroundAttachment: 'fixed',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        width: '100%',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '4rem',
-        alignItems: 'center',
-        position: 'relative',
-        zIndex: 1,
-      }}>
+      <div className="contact-background" />
+      
+      <div className="contact-container">
         {/* Left Column - Content */}
-        <div>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: '600',
-            color: '#fff',
-            marginBottom: '1.5rem',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            lineHeight: '1.2',
-            textShadow: '0 2px 8px rgba(0,0,0,0.18)'
-          }}>
-            Get a Free Quote Today
-          </h2>
+        <div className="contact-content">
+          <h2>Get a Free Quote Today</h2>
 
-          <p style={{
-            fontSize: '1rem',
-            color: '#fff',
-            marginBottom: '1rem',
-            lineHeight: '1.6',
-            textShadow: '0 2px 8px rgba(0,0,0,0.18)'
-          }}>
+          <p>
             We'll get back to you quickly with a no-obligation quote. You don't need to be home for most jobs — just provide access.
           </p>
 
           {/* Contact Information */}
-          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <Phone color="#fff" size={20} />
-              <span style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
-                Phone: <a href="tel:1800222000" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>1 800 222 000</a>
+          <div className="contact-info">
+            <div className="contact-item">
+              <Phone color="#fff" size={20} aria-hidden="true" />
+              <span>
+                Phone: <a href="tel:1800222000" className="contact-link">1 800 222 000</a>
               </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <Mail color="#fff" size={20} />
-              <span style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
-                Email: <a href="mailto:info@invisiblewindowcleaning.com" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>info@invisiblewindowcleaning.com</a>
+            <div className="contact-item">
+              <Mail color="#fff" size={20} aria-hidden="true" />
+              <span>
+                Email: <a href="mailto:info@invisiblewindowcleaning.com" className="contact-link">info@invisiblewindowcleaning.com</a>
               </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-              <Phone color="#fff" size={20} />
-              <span style={{ color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
-                WhatsApp: <a href="https://wa.me/1800222000" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>Chat on WhatsApp</a>
+            <div className="contact-item">
+              <Phone color="#fff" size={20} aria-hidden="true" />
+              <span>
+                WhatsApp: <a href="https://wa.me/1800222000" className="contact-link" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
               </span>
             </div>
           </div>
         </div>
 
         {/* Right Column - Form */}
-        <div style={{
-          background: 'white',
-          padding: '2rem',
-          borderRadius: '12px',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
-        }}>
-          <div>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: '1fr 1fr', 
-              gap: '1rem',
-              marginBottom: '1rem'
-            }}>
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  color: '#374151',
-                  marginBottom: '0.5rem'
-                }}>
+        <div className="contact-form">
+          <form onSubmit={handleSubmit}>
+            <div className="form-grid">
+              <div className="form-group">
+                <label htmlFor="name" className="form-label">
                   Name*
                 </label>
                 <input
+                  id="name"
+                  name="name"
                   type="text"
                   required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '1rem',
-                    background: '#f9fafb',
-                    outline: 'none',
-                    transition: 'border-color 0.2s',
-                    boxSizing: 'border-box'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = '#6366f1'}
-                  onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                  className="form-input"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  autoComplete="name"
                 />
               </div>
-              <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: '0.875rem',
-                  fontWeight: '500',
-                  color: '#374151',
-                  marginBottom: '0.5rem'
-                }}>
+              <div className="form-group">
+                <label htmlFor="address" className="form-label">
                   Address / Area
                 </label>
                 <input
+                  id="address"
+                  name="address"
                   type="text"
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '6px',
-                    fontSize: '1rem',
-                    background: '#f9fafb',
-                    outline: 'none',
-                    transition: 'border-color 0.2s',
-                    boxSizing: 'border-box'
-                  }}
-                  onFocus={(e) => e.target.style.borderColor = '#6366f1'}
-                  onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                  className="form-input"
+                  value={formData.address}
+                  onChange={handleInputChange}
+                  autoComplete="address-line1"
                 />
               </div>
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
-              <label style={{
-                display: 'block',
-                fontSize: '0.875rem',
-                fontWeight: '500',
-                color: '#374151',
-                marginBottom: '0.5rem'
-              }}>
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
                 Email*
               </label>
               <input
+                id="email"
+                name="email"
                 type="email"
                 required
-                style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
-                  fontSize: '1rem',
-                  background: '#f9fafb',
-                  outline: 'none',
-                  transition: 'border-color 0.2s',
-                  boxSizing: 'border-box'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
-                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                className="form-input"
+                value={formData.email}
+                onChange={handleInputChange}
+                autoComplete="email"
               />
             </div>
 
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{
-                display: 'block',
-                fontSize: '0.875rem',
-                fontWeight: '500',
-                color: '#374151',
-                marginBottom: '0.5rem'
-              }}>
+            <div className="form-group">
+              <label htmlFor="services" className="form-label">
                 Service(s) needed
               </label>
               <input
+                id="services"
+                name="services"
                 type="text"
-                style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
-                  fontSize: '1rem',
-                  background: '#f9fafb',
-                  outline: 'none',
-                  transition: 'border-color 0.2s',
-                  boxSizing: 'border-box'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
-                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                className="form-input"
+                value={formData.services}
+                onChange={handleInputChange}
+                placeholder="e.g., Window cleaning, Gutter clearing"
               />
             </div>
 
-            <div style={{ marginBottom: '1rem' }}>
-              <label style={{
-                display: 'block',
-                fontSize: '0.875rem',
-                fontWeight: '500',
-                color: '#374151',
-                marginBottom: '0.5rem'
-              }}>
+            <div className="form-group">
+              <label htmlFor="contact_method" className="form-label">
                 Preferred contact method
               </label>
               <input
+                id="contact_method"
+                name="contact_method"
                 type="text"
-                style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
-                  fontSize: '1rem',
-                  background: '#f9fafb',
-                  outline: 'none',
-                  transition: 'border-color 0.2s',
-                  boxSizing: 'border-box'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
-                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                className="form-input"
+                value={formData.contact_method}
+                onChange={handleInputChange}
+                placeholder="e.g., Phone, Email, WhatsApp"
               />
             </div>
 
-            <div style={{ marginBottom: '1.5rem' }}>
-              <label style={{
-                display: 'block',
-                fontSize: '0.875rem',
-                fontWeight: '500',
-                color: '#374151',
-                marginBottom: '0.5rem'
-              }}>
+            <div className="form-group">
+              <label htmlFor="notes" className="form-label">
                 Optional notes
               </label>
               <textarea
+                id="notes"
+                name="notes"
                 rows={4}
-                style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: '1px solid #d1d5db',
-                  borderRadius: '6px',
-                  fontSize: '1rem',
-                  background: '#f9fafb',
-                  outline: 'none',
-                  transition: 'border-color 0.2s',
-                  resize: 'vertical',
-                  boxSizing: 'border-box'
-                }}
-                onFocus={(e) => e.target.style.borderColor = '#6366f1'}
-                onBlur={(e) => e.target.style.borderColor = '#d1d5db'}
+                className="form-textarea"
+                value={formData.notes}
+                onChange={handleInputChange}
+                placeholder="Any additional information or special requirements..."
               />
             </div>
 
             <button
               type="submit"
+              className="form-submit"
+              disabled={isSubmitting}
               style={{
-                background: '#003366',
-                color: 'white',
-                fontWeight: '600',
-                padding: '0.75rem 2rem',
-                borderRadius: '6px',
-                border: 'none',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                transition: 'background-color 0.2s'
+                opacity: isSubmitting ? 0.7 : 1,
+                cursor: isSubmitting ? 'not-allowed' : 'pointer'
               }}
-              onMouseOver={(e) => ((e.target as HTMLButtonElement).style.backgroundColor = '#001a33')}
-              onMouseOut={(e) => ((e.target as HTMLButtonElement).style.backgroundColor = '#003366')}
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
-          </div>
+          </form>
         </div>
       </div>
-
-      {/* Responsive Design */}
-      <style>
-        {`
-          @media (max-width: 768px) {
-            section > div {
-              grid-template-columns: 1fr !important;
-              gap: 2rem !important;
-            }
-            
-            section {
-              padding: 2rem 1rem !important;
-            }
-            
-            h2 {
-              font-size: 2rem !important;
-            }
-          }
-          
-          @media (max-width: 480px) {
-            .form-grid {
-              grid-template-columns: 1fr !important;
-            }
-            
-            h2 {
-              font-size: 1.75rem !important;
-            }
-          }
-        `}
-      </style>
     </section>
   );
-}
+});
+
+export default ContactUsSection;
