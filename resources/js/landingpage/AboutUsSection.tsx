@@ -150,15 +150,16 @@ export default function AboutUsSection() {
                         className="team-card"
                       >
                         {/* Member Avatar with image for better LCP */}
-                        <div className="team-avatar">
+                        <div 
+                          className="team-avatar" 
+                          style={{ width: 80, height: 80, borderRadius: '50%', overflow: 'hidden', background: '#e6f0fa', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 6 }}
+                        >
                           <img
                             src={member.image}
                             alt={`Photo of ${member.name}`}
                             loading="lazy"
                             decoding="async"
-                            width="80"
-                            height="80"
-                            style={{ borderRadius: '50%', objectFit: 'cover', background: '#e6f0fa' }}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '50%' }}
                           />
                         </div>
                         <div className="team-info">

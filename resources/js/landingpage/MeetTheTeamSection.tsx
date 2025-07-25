@@ -86,9 +86,7 @@ const TestimonialsSection = memo(function TestimonialsSection() {
               alt={`Photo of ${testimonials[currentTestimonial].name}`}
               loading="lazy"
               decoding="async"
-              width="60"
-              height="60"
-              style={{ borderRadius: '50%', objectFit: 'cover', background: '#e6f0fa' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '50%' }}
             />
           </div>
 
