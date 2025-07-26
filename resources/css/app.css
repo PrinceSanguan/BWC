@@ -1,3 +1,14 @@
+  /* Darker overlay for hero video/poster */
+  .hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.55); /* increased opacity for a darker effect */
+    z-index: 2;
+    pointer-events: none;
+  }
 @import 'tailwindcss';
 
 @plugin 'tailwindcss-animate';

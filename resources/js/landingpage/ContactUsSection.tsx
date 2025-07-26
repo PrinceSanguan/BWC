@@ -72,11 +72,27 @@ const ContactUsSection = memo(function ContactUsSection() {
               </span>
             </div>
           </div>
+
+          {/* Cards Section (left column, below contact-info) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', margin: '2rem 0 0 0' }}>
+            <div className="contact-card" style={{ background: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.07)', padding: '1.25rem', minHeight: '140px' }}>
+              <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#1a237e' }}>100% Satisfaction Guarantee</h3>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.97rem', color: '#333' }}>
+                We stand by our work. If you're not happy, we'll make it right—no extra charge.
+              </p>
+            </div>
+            <div className="contact-card" style={{ background: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.07)', padding: '1.25rem', minHeight: '140px' }}>
+              <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#1a237e' }}>Fully Insured & Police Checked</h3>
+              <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.97rem', color: '#333' }}>
+                Your property is in safe hands. All our team members are fully insured and background checked.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Right Column - Form */}
         <div className="contact-form">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <div className="form-grid">
               <div className="form-group">
                 <label htmlFor="name" className="form-label">

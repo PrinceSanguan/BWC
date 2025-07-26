@@ -37,6 +37,8 @@ export default function HeroSection() {
   return (
     <div className="hero-section window-cleaning-theme">
       {/* Optimized Background Video */}
+
+      {/* Video or Poster */}
       {shouldLoadVideo && isIntersecting ? (
         <video
           className="hero-video"
@@ -64,17 +66,20 @@ export default function HeroSection() {
         </picture>
       )}
 
+      {/* Dark overlay for video/poster */}
+      <div className="hero-video-overlay" />
+
       {/* Main Hero Content */}
       <main className="hero-content">
         {/* Small subtitle */}
         <div className="mb-8">
-          <span className="hero-subtitle">
+          <span style={{fontWeight: 600, fontSize: '1.1rem', color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.18)'}}>
             Bristol's Trusted Window Cleaning
           </span>
         </div>
         
         {/* Main headline */}
-        <h1 className="hero-title">
+        <h1 className="hero-title" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)' }}>
           <span className="block">Professional Exterior Cleaning</span>
           <span className="block">For Homes & Businesses</span>
         </h1>
