@@ -1,60 +1,107 @@
+.logoPlaceholder {
+  width: 220px;
+  height: 110px;
+  background: #e0e7ef;
+  color: #225b8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
 .ctaSection {
+  width: 100%;
+  background: #fff;
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctaContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  gap: 2rem;
+}
+.ctaLogoCol {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
-  background: #003366;
-  text-align: center;
+  margin-bottom: 1.5rem;
 }
-
+.ctaLogoImg {
+  width: 220px;
+  max-width: 90vw;
+  height: auto;
+  display: block;
+}
+.ctaTextCol {
+  text-align: left;
+  max-width: 600px;
+}
 .ctaTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 1.25rem;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
 }
-
-.ctaButton {
-  background: #ffd600;
-  color: #003366;
+.ctaAccent {
+  color: #225b8e;
   font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0.85rem 2.25rem;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.ctaDesc {
+  color: #225b8e;
+  font-size: 1.08rem;
+  margin-bottom: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
-.ctaButton:hover {
-  background: #ffea80;
-  transform: translateY(-2px) scale(1.04);
-}
-
-@media (min-width: 641px) {
-  .ctaSection {
-    padding: 3rem 2rem;
+@media (min-width: 800px) {
+  .ctaContainer {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+  .ctaLogoCol {
+    margin-bottom: 0;
+    flex: 0 0 320px;
+    justify-content: flex-start;
+  }
+  .ctaLogoImg {
+    width: 320px;
+    max-width: 320px;
+  }
+  .ctaTextCol {
+    max-width: 520px;
+    text-align: left;
+    padding-top: 1.2rem;
   }
   .ctaTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
-  .ctaButton {
-    font-size: 1.2rem;
-    padding: 1rem 2.75rem;
+  .ctaDesc {
+    font-size: 1.13rem;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
   .ctaSection {
-    padding: 4rem 0;
+    padding: 4rem 0 4rem 0;
   }
   .ctaTitle {
-    font-size: 2.25rem;
+    font-size: 2.8rem;
   }
-  .ctaButton {
-    font-size: 1.3rem;
-    padding: 1.15rem 3.25rem;
+  .ctaDesc {
+    font-size: 1.18rem;
   }
 }

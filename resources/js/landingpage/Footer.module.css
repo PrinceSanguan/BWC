@@ -1,25 +1,241 @@
-.mainFooter {
+/* Logo placeholder for footer */
+.footerLogoPlaceholder {
+  width: 150px;
+  height: 60px;
+  background: #e3e8ee;
+  color: #256193;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem 1rem 1rem;
-  background: #003366;
-  color: #fff;
-  text-align: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.05em;
 }
-
-@media (min-width: 641px) {
-  .mainFooter {
-    padding: 2.5rem 2rem 1.5rem 2rem;
-    font-size: 1.1rem;
+/* --- Custom tweaks for perfect image match --- */
+.footerContactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.2rem;
+}
+.footerLinksTitle {
+  font-weight: 700;
+  font-size: 1.01rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.01em;
+}
+.footerSocialRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.7rem 0 0.2rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #e3e8ee;
+  padding-bottom: 0.7rem;
+  width: 100%;
+  max-width: 220px;
+}
+.footerCopyright {
+  font-size: 0.93rem;
+  color: #7a8ca3;
+  margin-top: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 899px) {
+  .footerColMid {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .footerLinksWrap {
+    flex-direction: column;
+    gap: 1.2rem;
   }
 }
 
-@media (min-width: 1025px) {
+.mainFooter {
+  width: 100%;
+  background: #fff;
+  color: #23405a;
+  padding: 2.5rem 1rem 1.2rem 1rem;
+  font-size: 1rem;
+  border-top: 1.5px solid #e3e8ee;
+}
+
+.footerGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerColLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1.5;
+  gap: 1.1rem;
+}
+.footerLogoWrap {
+  margin-bottom: 0.2rem;
+}
+.footerLogo {
+  width: 170px;
+  height: auto;
+  margin-bottom: 0.2rem;
+}
+.footerMission {
+  font-size: 0.98rem;
+  color: #23405a;
+  margin-bottom: 0.7rem;
+  max-width: 270px;
+}
+.footerSocialRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.7rem 0 0.2rem 0;
+  font-size: 1rem;
+}
+.footerSocialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f3f6fa;
+  transition: background 0.15s;
+  margin-left: 0.2rem;
+}
+.footerSocialIcon:hover {
+  background: #e3e8ee;
+}
+.footerCopyright {
+  font-size: 0.93rem;
+  color: #7a8ca3;
+  margin-top: 1.2rem;
+}
+
+.footerColMid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 0;
+  flex: 2.2;
+}
+.footerContactRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+.footerContactIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerLinksWrap {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 1.2rem;
+}
+.footerLinksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.footerLinksTitle {
+  font-weight: 700;
+  font-size: 1.01rem;
+  margin-bottom: 0.3rem;
+}
+.footerLink {
+  color: #23405a;
+  text-decoration: none;
+  font-size: 0.98rem;
+  margin-bottom: 0.1rem;
+  transition: color 0.15s;
+  cursor: pointer;
+}
+.footerLink:hover {
+  color: #256193;
+}
+
+.footerColRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1.2;
+  gap: 0.7rem;
+}
+.footerLocationTitle {
+  font-weight: 700;
+  font-size: 1.01rem;
+  margin-bottom: 0.1rem;
+}
+.footerLocationAddr {
+  font-size: 0.98rem;
+  margin-bottom: 0.7rem;
+}
+.footerOpenTitle {
+  font-weight: 700;
+  font-size: 1.01rem;
+  margin-bottom: 0.1rem;
+}
+.footerOpenHours {
+  font-size: 0.98rem;
+  color: #23405a;
+}
+
+@media (min-width: 900px) {
+  .footerGrid {
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+  .footerColLeft {
+    align-items: flex-start;
+    max-width: 300px;
+  }
+  .footerColMid {
+    flex-direction: row;
+    gap: 3.5rem;
+    align-items: flex-start;
+    max-width: 500px;
+  }
+  .footerLinksWrap {
+    flex-direction: row;
+    gap: 3.5rem;
+    margin-top: 0.5rem;
+  }
+  .footerColRight {
+    align-items: flex-start;
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
   .mainFooter {
-    padding: 3rem 0 2rem 0;
-    font-size: 1.15rem;
+    padding: 3.5rem 0 1.5rem 0;
+    font-size: 1.08rem;
+  }
+  .footerGrid {
+    gap: 3.5rem;
+    max-width: 1400px;
+  }
+  .footerColLeft {
+    max-width: 320px;
+  }
+  .footerColMid {
+    max-width: 600px;
+  }
+  .footerColRight {
+    max-width: 260px;
   }
 }

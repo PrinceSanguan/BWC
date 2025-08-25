@@ -1,57 +1,105 @@
+
 .actionsSection {
+  width: 100%;
+  background: #fff;
+  padding: 2.5rem 1rem 2.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background: #f8fcff;
   text-align: center;
 }
 
 .actionsTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #003366;
-  margin-bottom: 1rem;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.01em;
 }
-
-.actionsList {
-  list-style: decimal inside;
-  padding: 0;
+.actionsAccent {
+  color: #225b8e;
+  font-weight: 700;
+}
+.actionsSubtitle {
+  color: #225b8e;
+  font-size: 1.08rem;
+  margin-bottom: 2.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.actionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
-  font-size: 1.1rem;
-  color: #333;
-  max-width: 400px;
-  text-align: left;
 }
-
-.actionsList li {
-  margin-bottom: 0.75rem;
-  padding-left: 0.5rem;
+.actionCard {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px 0 rgba(34,91,142,0.10);
+  padding: 0 0 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.actionCard:hover {
+  box-shadow: 0 10px 28px 0 rgba(34,91,142,0.18);
+}
+.actionImg {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 0.7rem 0.7rem 0 0;
+  margin-bottom: 0.7rem;
+}
+.actionCaption {
+  color: #225b8e;
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  line-height: 1.2;
 }
 
 @media (min-width: 641px) {
   .actionsSection {
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem 3.5rem 2rem;
   }
   .actionsTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
-  .actionsList {
-    font-size: 1.25rem;
-    max-width: 600px;
+  .actionsSubtitle {
+    font-size: 1.13rem;
+  }
+  .actionsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .actionImg {
+    max-width: 340px;
+  }
+  .actionCaption {
+    font-size: 1.22rem;
   }
 }
 
 @media (min-width: 1025px) {
   .actionsSection {
-    padding: 4rem 0;
+    padding: 4.5rem 0 4.5rem 0;
   }
   .actionsTitle {
-    font-size: 2.25rem;
+    font-size: 2.8rem;
   }
-  .actionsList {
-    font-size: 1.35rem;
-    max-width: 700px;
+  .actionsSubtitle {
+    font-size: 1.18rem;
+  }
+  .actionImg {
+    max-width: 370px;
+  }
+  .actionCaption {
+    font-size: 1.28rem;
   }
 }

@@ -2,12 +2,32 @@ import styles from './VideoSection.module.css';
 
 export default function VideoSection() {
   return (
-    <section className={styles.videoSection} aria-label="Video Demo">
-      <h2 className={styles.videoTitle}>See Us In Action</h2>
-      <video className={styles.responsiveVideo} controls>
-        <source src="/videos/webm/12761815_3364_1440_30fps.webm" type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
+    <section className={styles.videoSection} aria-label="Your Local Cleaners at Work">
+      <h2 className={styles.videoTitle}>
+        Your Local Cleaners at <span className={styles.videoAccent}>Work</span>
+      </h2>
+      <div className={styles.videoSubtitle}>
+        Watch our expert team in action on a recent job. See the clear difference we make to<br />
+        properties every single day.
+      </div>
+      <div className={styles.videoFrameWrap}>
+        <iframe
+          className={styles.videoFrame}
+          src="https://www.youtube.com/embed/1QZQhJd6G9w"
+          title="Street Front Window Clean Bedminster - Bristol"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className={styles.videoCtas}>
+        <button className={styles.ctaBtn} type="button">
+          <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+        </button>
+        <button className={styles.secondaryBtn} type="button">
+          See Our Services
+        </button>
+      </div>
     </section>
   );
 }
