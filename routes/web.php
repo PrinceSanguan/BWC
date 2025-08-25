@@ -115,3 +115,7 @@ Route::middleware([UserMiddleware::class])->group(function () {
   Route::put('user/settings/profile', [UserSettingsController::class, 'updateProfile'])->name('user.settings.updateProfile');
   Route::put('user/settings/password', [UserSettingsController::class, 'updatePassword'])->name('user.settings.updatePassword');
 });
+
+
+use App\Http\Controllers\BlogsController;
+Route::get('/blogs', [BlogsController::class, 'index']);

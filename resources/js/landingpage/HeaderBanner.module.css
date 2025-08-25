@@ -1,0 +1,79 @@
+.headerBanner {
+  width: 100%;
+  background: #3a8dc6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.45rem 0.5rem 0.45rem 0.5rem;
+  letter-spacing: 0.01em;
+  min-height: 2.2rem;
+  box-shadow: 0 1px 6px rgba(37,97,147,0.08);
+  z-index: 200;
+}
+.bannerCol {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  white-space: nowrap;
+}
+.bannerEmail {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bannerCenter {
+  justify-content: center;
+}
+.bannerAddress {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+}
+.bannerRight {
+  justify-content: flex-end;
+  gap: 0.7em;
+}
+.bannerCall {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+.bannerPhone {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 900px) {
+  .headerBanner {
+    font-size: 0.98rem;
+    flex-direction: column;
+    gap: 0.2em;
+    padding: 0.4rem 0.2rem;
+    min-height: unset;
+  }
+  .bannerCol {
+    justify-content: center !important;
+    margin-bottom: 0.1em;
+  }
+  .bannerRight {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+  }
+}
+@media (max-width: 640px) {
+  .headerBanner {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.1rem;
+  }
+  .bannerAddress, .bannerCall, .bannerPhone, .bannerEmail {
+    font-size: 0.97rem;
+  }
+}

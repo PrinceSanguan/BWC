@@ -1,0 +1,49 @@
+.areasHeroSection {
+  padding: 3.5rem 1rem 2.5rem 1rem;
+  background: #3892c7;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.areasHeroTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+  line-height: 1.15;
+}
+
+.areasHeroSubtitle {
+  font-size: 1.08rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-bottom: 1.7rem;
+}
+
+@media (min-width: 641px) {
+  .areasHeroSection {
+    padding: 5rem 2rem 3.5rem 2rem;
+  }
+  .areasHeroTitle {
+    font-size: 2.7rem;
+  }
+  .areasHeroSubtitle {
+    font-size: 1.15rem;
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .areasHeroSection {
+    padding: 7rem 0 4.5rem 0;
+  }
+  .areasHeroTitle {
+    font-size: 3.1rem;
+  }
+  .areasHeroSubtitle {
+    font-size: 1.18rem;
+    max-width: 1000px;
+  }
+}

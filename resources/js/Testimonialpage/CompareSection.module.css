@@ -1,0 +1,80 @@
+.compareSection {
+  padding: 2.5rem 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.compareTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #256193;
+  margin-bottom: 1.2rem;
+}
+
+.compareGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.compareCard {
+  background: #f8fcff;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 8px rgba(37,97,147,0.07);
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compareLabel {
+  font-weight: 700;
+  color: #256193;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.compareImage {
+  width: 100%;
+  max-width: 320px;
+  height: 160px;
+  background: #e3e8ee;
+  border-radius: 0.5rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a8ca3;
+  font-size: 1.1rem;
+}
+
+@media (min-width: 641px) {
+  .compareSection {
+    padding: 3.5rem 2rem;
+  }
+  .compareTitle {
+    font-size: 2.4rem;
+  }
+  .compareGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .compareSection {
+    padding: 5rem 0;
+  }
+  .compareTitle {
+    font-size: 2.8rem;
+  }
+  .compareGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
+}

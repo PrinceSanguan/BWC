@@ -1,0 +1,85 @@
+.teamSection {
+  padding: 2.5rem 1rem;
+  background: #f8fcff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.teamTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #256193;
+  margin-bottom: 1.2rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+.teamCard {
+  background: #fff;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 8px rgba(37,97,147,0.07);
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teamAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #e3e8ee;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #256193;
+}
+
+.teamName {
+  font-weight: 700;
+  color: #256193;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.teamRole {
+  color: #888;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 641px) {
+  .teamSection {
+    padding: 3.5rem 2rem;
+  }
+  .teamTitle {
+    font-size: 2.4rem;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .teamSection {
+    padding: 5rem 0;
+  }
+  .teamTitle {
+    font-size: 2.8rem;
+  }
+  .teamGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1100px;
+  }
+}
