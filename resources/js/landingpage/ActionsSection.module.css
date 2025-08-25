@@ -1,0 +1,57 @@
+.actionsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #f8fcff;
+  text-align: center;
+}
+
+.actionsTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.actionsList {
+  list-style: decimal inside;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 400px;
+  text-align: left;
+}
+
+.actionsList li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 641px) {
+  .actionsSection {
+    padding: 3rem 2rem;
+  }
+  .actionsTitle {
+    font-size: 2rem;
+  }
+  .actionsList {
+    font-size: 1.25rem;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .actionsSection {
+    padding: 4rem 0;
+  }
+  .actionsTitle {
+    font-size: 2.25rem;
+  }
+  .actionsList {
+    font-size: 1.35rem;
+    max-width: 700px;
+  }
+}
