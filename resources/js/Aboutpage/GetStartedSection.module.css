@@ -1,0 +1,105 @@
+.getStartedSection {
+  padding: 2.5rem 1rem;
+  background-color: #f9f9f9;
+}
+
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.contentLeft {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  flex: 1;
+}
+
+.contentRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.contentRight img {
+  width: 724px;
+  height: 400px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: black 0px 2px 6px -1px;
+}
+
+
+.getStartedTitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #256193;
+}
+
+.getStartedTitle:nth-child(1) {
+  color: black;
+}
+
+.getStartedDescription {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+  margin-top: 3rem;
+}
+
+.getStartedDescription:nth-child(1) {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.getStartedButton {
+  padding: 0.8rem 1.5rem;
+  background: #256193;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.getStartedButton:hover {
+  background: #1e4f6b;
+}
+
+@media (min-width: 641px) {
+  .getStartedSection {
+    padding: 3.5rem 2rem;
+  }
+  .getStartedTitle {
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .getStartedSection {
+    padding: 5rem 0;
+  }
+  .getStartedTitle {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contentLeft,
+  .contentRight {
+    text-align: center;
+  }
+}

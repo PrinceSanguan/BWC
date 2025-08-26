@@ -24,7 +24,7 @@ export default function WhoWeAreSection() {
             and being easy to work with.
           </h2>
           <div>
-            <button className={styles.heroButton}>Free Quote</button>
+            <button className={styles.heroButton}>Get a Free Quote</button>
             <button className={styles.heroButton}>Contact Us</button>
           </div>
         </div>

@@ -9,55 +9,48 @@
 
 .herocontent {
   display: flex;
-  align-items: flex-start;  /* Changed from center to flex-start */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 10rem;
-  margin: 0 2rem;
+  gap: 2rem;
+  margin: 0 1rem;
 }
 
-.heroLeftContent {
-  flex: 1;
-  text-align: left;
-  margin-right: 2rem;
-  margin-top: 5rem;  
-  align-self: flex-start; 
-}
-
-
+.heroLeftContent,
 .herRightContent {
   flex: 1;
-  text-align: right;
+  text-align: left;
+  margin: 0 0 2rem 0;
+  align-self: stretch;
 }
 
 .heroImage {
-  width: 49.1875rem;  
-  height: 42rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   object-fit: cover;
+  margin-bottom: 2rem;
 }
 
-
 .whoWeAreTitle {
-  font-size: 4rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: #256193;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .whoWeAreTitle:nth-child(2) {
   color: black;
 }
 
-
 .whoWeAreText {
-  width: 564px;
-  height: auto  ;
-  margin-top: 5rem;
-  font-size: 1.08rem;
-  color: #23405a;
+  width: 100%;
   max-width: 700px;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #23405a;
+  margin-bottom: 1.2rem;
 }
-
 
 .heroButton {
   background-color: #FDB940;
@@ -69,10 +62,11 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  width: 12rem;
-  height: 3.25rem;
+  width: 100%;
+  max-width: 12rem;
+  height: 3rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .heroButton:nth-child(2) {
@@ -85,7 +79,18 @@
   background-color: #e6a830;
 }
 
+/* Tablet */
 @media (min-width: 641px) {
+  .herocontent {
+    flex-direction: row;
+    gap: 4rem;
+    margin: 0 2rem;
+  }
+  .heroLeftContent,
+  .herRightContent {
+    margin: 0 2rem 0 0;
+    align-self: flex-start;
+  }
   .whoWeAreSection {
     padding: 3.5rem 2rem;
   }
@@ -93,12 +98,20 @@
     font-size: 2.4rem;
   }
   .whoWeAreText {
-    font-size: 1.15rem;
+    font-size: 1.08rem;
     max-width: 900px;
+  }
+  .heroImage {
+    max-width: 400px;
   }
 }
 
+/* Desktop */
 @media (min-width: 1025px) {
+  .herocontent {
+    gap: 10rem;
+    margin: 0 2rem;
+  }
   .whoWeAreSection {
     padding: 5rem 0;
   }
@@ -108,5 +121,9 @@
   .whoWeAreText {
     font-size: 1.18rem;
     max-width: 1100px;
+  }
+  .heroImage {
+    max-width: 790px;
+    height: 42rem;
   }
 }

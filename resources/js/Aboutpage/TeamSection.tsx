@@ -16,13 +16,17 @@ const team: TeamMember[] = [
 export default function TeamSection() {
   return (
     <section className={styles.teamSection} aria-label="Our Team">
-      <h2 className={styles.teamTitle}>Meet the Team</h2>
+      <h2>
+        <span className={styles.teamTitle}>Meet the</span>
+        <span className={styles.teamTitle}> Team</span>
+      </h2>
       <div className={styles.teamGrid}>
         {team.map((member, i) => (
           <div className={styles.teamCard} key={i}>
             <div className={styles.teamAvatar}>{member.initials}</div>
             <div className={styles.teamName}>{member.name}</div>
             <div className={styles.teamRole}>{member.role}</div>
+            <div><button className={styles.teamButton}>Contact</button></div>
           </div>
         ))}
       </div>

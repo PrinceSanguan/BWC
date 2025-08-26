@@ -3,9 +3,11 @@ import Header from '../landingpage/Header';
 import Footer from '../landingpage/Footer';
 import WhoWeAreSection from '../Aboutpage/WhoWeAreSection';
 import OurValuesSection from '../Aboutpage/OurValuesSection';
-import HistorySection from '../Aboutpage/HistorySection';
 import TeamSection from '../Aboutpage/TeamSection';
 import WhyChooseUsSection from '../Aboutpage/WhyChooseUsSection';
+import GetStartedSection from '../Aboutpage/GetStartedSection';
+import FinalCTASection from '@/landingpage/FinalCTASection';
+import FAQSection from '@/landingpage/FAQSection';
 
 export default function About() {
   return (
@@ -14,9 +16,11 @@ export default function About() {
       <div>
         <WhoWeAreSection />
         <OurValuesSection />
-        <HistorySection />
+        <GetStartedSection />
         <TeamSection />
         <WhyChooseUsSection />
+        <FAQSection />
+        <FinalCTASection />
       </div>
       <Footer />
     </>

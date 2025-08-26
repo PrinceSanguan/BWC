@@ -1,13 +1,27 @@
+import React from 'react';
 import styles from './WhyChooseUsSection.module.css';
+import { LucideHeartHandshake, HandHeart, UsersRound, Scale} from 'lucide-react';
 
-const reasons = [
-  'Experienced, friendly professionals',
-  'Eco-friendly and safe cleaning methods',
-  'Flexible scheduling and reliable service',
-  'Transparent pricing, no hidden fees',
-  'Excellent customer reviews',
-  'Fully insured and satisfaction guaranteed',
+
+const reasons: { icon: React.ComponentType<any>; text: string }[] = [
+  {
+    icon: LucideHeartHandshake,
+    text: 'Experienced, friendly professionals',
+  },
+  {
+    icon: HandHeart,
+    text: 'Eco-friendly and safe cleaning methods',
+  },
+  {
+    icon: UsersRound,
+    text: 'Flexible scheduling and reliable service',
+  },
+  {
+    icon: Scale,
+    text: 'Transparent pricing, no hidden fees',
+  }
 ];
+
 
 export default function WhyChooseUsSection() {
   return (
@@ -16,7 +30,8 @@ export default function WhyChooseUsSection() {
       <div className={styles.whyChooseGrid}>
         {reasons.map((reason, i) => (
           <div className={styles.whyChooseCard} key={i}>
-            <div className={styles.whyChooseReason}>{reason}</div>
+            <div className={styles.whyChooseIcon}>{React.createElement(reason.icon)}</div>
+            <div className={styles.whyChooseReason}>{reason.text}</div>
           </div>
         ))}
       </div>
