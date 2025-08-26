@@ -1,6 +1,6 @@
 .whyChooseSection {
   padding: 2.5rem 1rem;
-  background: #fff;
+  background: #f9f9f9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +37,18 @@
   color: #23405a;
   font-size: 1.08rem;
 }
+
+.whyChooseIcon {
+  width: 150px;
+  height: 150px;
+  color: #256193;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 @media (min-width: 641px) {
   .whyChooseSection {

@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background: #fff;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   padding: 2.5rem 1rem 3.5rem 1rem;
-  background: #fff;
+  background: #f9f9f9;
   text-align: center;
 }
 
@@ -27,12 +27,12 @@
 }
 
 .faqAccent {
-  color: #256193;
+  color: black;
   font-weight: 600;
 }
 
 .faqSubtitle {
-  color: #4a5a6a;
+  color: black;
   font-size: 1rem;
   margin-bottom: 2.5rem;
   max-width: 600px;
