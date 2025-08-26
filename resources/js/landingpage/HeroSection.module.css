@@ -5,21 +5,195 @@
   justify-content: center;
   min-height: 60vh;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #e0f2ff 0%, #f8fcff 100%);
+  background-image: url('images/heroLanding.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
-.heroTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #003366;
-  margin-bottom: 1rem;
+.heroGlassEffect {
+  width: 90rem;
+  height: 45rem;
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 5rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2),
+    0 4px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem;
+  gap: 4rem;
 }
 
-.heroSubtitle {
+.heroGlassEffect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5rem;
+  box-shadow: 
+    inset 10px 10px 20px rgba(0, 0, 0, 0.05),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+
+.heroLeftContent {
+  flex: 0 1 45%;
+  max-width: 45%;
+  text-align: left;
+  padding: 0; /* Removed padding */
+  margin-top: -2rem; /* Added negative margin to move it up */
+  align-self: flex-start;
+}
+
+
+.heroLeftContent ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.heroLeftContent li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
   font-size: 1.1rem;
-  color: #333;
+  color: #003366;
+}
+
+.heroLeftContent li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #003366;
+}
+
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #FDB940;
+  line-height: 1;
+  margin: 0;
+}
+
+.heroTitle:nth-child(2) {
+  color: #FFFFFF;
+  margin-top: -0.5rem;
+}
+
+
+.heroSubtitle {
+  font-size: 3rem;
+  color: #FFFFFF;
   margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+
+.heroSubtitle li {
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  position: relative;
+  list-style: none;
+}
+
+.heroSubtitle li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url('/images/Check.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.heroBottomText {
+  margin-top: auto;
+  padding-top: 2rem;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: left;
+  width: 100%;
+}
+
+.heroButton {
+  margin-top: 2rem;
+  background-color: #FDB940;
+  color: #1F5377;
+  width: 12.625rem;
+  height: 3.25rem;
+  padding: 0;
+  border: none;
+  border-radius: 0.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.heroButton:hover {
+  background-color: #FFC15E;
+}
+
+.heroRightContent {
+  flex: 0 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0;
+  margin-top: -3rem; /* Increased negative margin to move it higher */
+}
+
+.heroRightContent img {
+  width: 29.25rem; /* 468px */
+  height: 30.5625rem; /* 489px */
+  object-fit: contain;
+  margin-top: 0;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 1024px) {
+  .heroGlassEffect {
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+  }
+
+  .heroLeftContent,
+  .heroRightContent {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .heroRightContent img {
+    width: 100%;
+    height: auto;
+    max-width: 29.25rem;
+  }
 }
 
 @media (min-width: 641px) {
