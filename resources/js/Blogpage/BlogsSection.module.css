@@ -1,73 +1,228 @@
-.blogsSection {
-  padding: 2.5rem 1rem;
-  background: #fff;
+.servicesSection {
+  padding: 2rem 1rem 3rem;
+  background: #f9f9f9;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
 }
 
-.blogsTitle {
-  font-size: 2rem;
+.servicesTitle {
+  font-size: 1.8rem;
   font-weight: 600;
   color: #256193;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-.blogsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.servicesGrid {
+  margin: 20px auto;
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 20px;
+  justify-items: center;
+  grid-auto-rows: 1fr;
 }
 
-.blogCard {
-  background: #f8fcff;
+.serviceCard {
   border-radius: 0.7rem;
   box-shadow: 0 2px 8px rgba(37,97,147,0.07);
   padding: 1.2rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  min-height: 160px;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: #fff;
 }
 
-.blogTitle {
+.serviceName {
   font-weight: 700;
   color: #256193;
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
 
-.blogMeta {
-  color: #888;
+.serviceDesc {
+  color: #23405a;
   font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.servicesIntro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem 0.5rem;
+  margin: 0.8rem 0 1.5rem;
+  max-width: 90%;
+}
+
+.serviceTitleName {
+  font-weight: 500;
+  color: #1F5377;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.readMoreButton {
+  padding: 0.6rem 1.2rem;
+  background: #FDB940;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: auto;
+  align-self: center;
+  width: 100%;
+  max-width: 180px;
+  height: 40px;
+  box-sizing: border-box;
+  transition: background 0.3s;
+}
+
+.readMoreButton:hover {
+  background: #e5a53a;
+}
+
+.serviceImage {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
+@media (min-width: 481px) {
+  .servicesTitle {
+    font-size: 1.9rem;
+  }
+  
+  .serviceCard {
+    padding: 1.3rem 1.1rem;
+    max-width: 450px;
+  }
+  
+  .serviceDesc {
+    font-size: 1rem;
+  }
+  
+  .serviceTitleName {
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablets */
 @media (min-width: 641px) {
-  .blogsSection {
-    padding: 3.5rem 2rem;
+  .servicesSection {
+    padding: 3rem 2rem 4rem;
   }
-  .blogsTitle {
-    font-size: 2.4rem;
+  
+  .servicesTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
-  .blogsGrid {
-    grid-template-columns: 1fr 1fr;
-    max-width: 900px;
+  
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .serviceCard {
+    padding: 1.4rem 1.2rem;
+  }
+  
+  .serviceDesc {
+    font-size: 1rem;
+  }
+  
+  .serviceTitleName {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.7rem;
+  }
+  
+  .readMoreButton {
+    font-size: 0.95rem;
+    max-width: 200px;
+    height: 45px;
+  }
+  
+  .serviceImage {
+    max-width: 100%;
+    height: auto;
   }
 }
 
 @media (min-width: 1025px) {
-  .blogsSection {
-    padding: 5rem 0;
+  .servicesSection {
+    padding: 4rem 2rem 5rem;
   }
-  .blogsTitle {
-    font-size: 2.8rem;
+  
+  .servicesTitle {
+    font-size: 2.2rem;
   }
-  .blogsGrid {
-    grid-template-columns: 1fr 1fr 1fr;
+  
+  .servicesGrid {
     max-width: 1100px;
+    gap: 30px;
+  }
+  
+  .serviceCard {
+    padding: 1.5rem;
+  }
+  
+  .serviceName {
+    font-size: 1.2rem;
+  }
+  
+  .serviceDesc {
+    font-size: 1.05rem;
+  }
+  
+  .servicesIntro {
+    gap: 0.5rem 0.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .serviceTitleName {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.8rem;
+  }
+}
+@media (min-width: 1440px) {
+  .servicesSection {
+    padding: 5rem 2rem 6rem;
+  }
+  
+  .servicesTitle {
+    font-size: 2.4rem;
+  }
+  
+  .servicesGrid {
+    max-width: 1200px;
+  }
+  
+  .serviceImage {
+    max-width: 522px;
+    height: 289px;
+    aspect-ratio: auto;
+  }
+  
+  .serviceCard {
+    max-width: 522px;
   }
 }

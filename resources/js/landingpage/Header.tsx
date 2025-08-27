@@ -20,7 +20,7 @@ export default function Header() {
           <a href="/blogs">Blogs</a>
         </nav>
         <button className={styles.ctaBtn} type="button">
-          <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+        <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
         </button>
       </header>
     </>
