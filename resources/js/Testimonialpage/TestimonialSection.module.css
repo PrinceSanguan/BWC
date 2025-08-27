@@ -10,9 +10,14 @@
 .testimonialTitle {
   font-size: 2rem;
   font-weight: 600;
-  color: #256193;
+  color: #000;
   margin-bottom: 1.2rem;
 }
+
+.testimonialTitle span{
+  color: #256193;
+}
+
 
 .testimonialGrid {
   display: grid;
@@ -56,6 +61,15 @@
   font-size: 1.2rem;
   letter-spacing: 0.1em;
 }
+
+
+.testimonialSubtitle{
+  font-size: 1.2rem;
+  color: #1F5377;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
 
 @media (min-width: 641px) {
   .testimonialSection {

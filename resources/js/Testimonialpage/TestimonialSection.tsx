@@ -31,7 +31,8 @@ const testimonials: Testimonial[] = [
 export default function TestimonialSection() {
   return (
     <section className={styles.testimonialSection} aria-label="Customer Testimonials">
-      <h2 className={styles.testimonialTitle}>What Our Customers Say</h2>
+      <h1 className={styles.testimonialTitle}>What Our <span>Customers</span> Say</h1>
+      <h2 className={styles.testimonialSubtitle}>Read what real clients have to say about our service. Their feedback highlights the quality and care we bring to every job.</h2>
       <div className={styles.testimonialGrid}>
         {testimonials.map((t, i) => (
           <article className={styles.testimonialCard} key={i} aria-label={`Testimonial from ${t.name}`}>
