@@ -1,49 +1,152 @@
 .areasHeroSection {
-  padding: 3.5rem 1rem 2.5rem 1rem;
-  background: #3892c7;
-  color: #fff;
+  padding: 3.5rem 10rem 2.5rem 10rem;
+  background: #f9f9f9;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+}
+
+.areasHeroContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: none;
+}
+
+
+.areasHeroRightContainer{
+  display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  position: relative; 
+}
+
+.areasHeroLeftContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 750px;
 }
 
 .areasHeroTitle {
-  font-size: 2.2rem;
+  width: 100%;
+  max-width: 750px;
+  font-size: 5.2rem;
   font-weight: 600;
   margin-bottom: 1.1rem;
   line-height: 1.15;
+  text-align: left;
+}
+
+.areasHeroTitle:nth-child(2) {
+  color: #256193;
 }
 
 .areasHeroSubtitle {
   font-size: 1.08rem;
+  margin-top: 2rem;
   opacity: 0.95;
   max-width: 600px;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
+
+.areasHeroImage {
+  width: 892px;
+  max-width: 892px;
+  height: 740px;
+  object-fit: contain;
+  margin-left: 2rem;
+  position: relative;
+  top: -100px;
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.areasHeroImageCaptionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  padding-left: 1rem;          
+  background-color: #FDB940;
+  height: 93px;
+  width: 323px;
+  border-radius: 5px;
+  text-align: left;             
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.areasHeroImageCaptionIcon {
+  transform: rotate(90deg);
+  width: 33px;
+  height: 33px;
+  margin-right: 0.75rem; 
+  color: #256193;
+  margin-left: 0;       
+  text-align: left;
+}
+
+
+@media (max-width: 1024px) {
+  .areasHeroImage {
+    top: 0;
+    margin-left: 2rem;
+    max-width: 100%;
+    height: auto;
+  }
+  .areasHeroImageCaptionContainer {
+    position: static;
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    transform: none;
+  }
+}
+
 
 @media (min-width: 641px) {
   .areasHeroSection {
-    padding: 5rem 2rem 3.5rem 2rem;
+    padding: 5rem 15rem 3.5rem 10rem;
+    align-items: flex-start;
+    text-align: left;
   }
   .areasHeroTitle {
     font-size: 2.7rem;
+    max-width: 733px;
+    text-align: left;
   }
   .areasHeroSubtitle {
     font-size: 1.15rem;
     max-width: 800px;
+    text-align: left;
   }
 }
 
 @media (min-width: 1025px) {
   .areasHeroSection {
-    padding: 7rem 0 4.5rem 0;
+    /* larger top spacing, use 10rem side padding */
+    padding: 7rem 10rem 4.5rem 10rem;
+    align-items: flex-start;
+    text-align: left;
   }
   .areasHeroTitle {
-    font-size: 3.1rem;
+    font-size: 3.6rem;
+    max-width: 900px;
+    text-align: left;
   }
   .areasHeroSubtitle {
     font-size: 1.18rem;
     max-width: 1000px;
+    text-align: left;
   }
 }
