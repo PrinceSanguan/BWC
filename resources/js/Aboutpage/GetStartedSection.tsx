@@ -1,5 +1,5 @@
 import styles  from "../Aboutpage/GetStartedSection.module.css";
-import Img from "/home/natty/BWC/public/images/getstarted.jpg";
+
 
 export default function GetStartedSection() {
     return (
@@ -22,7 +22,7 @@ export default function GetStartedSection() {
                     </h2>
                 </div>
                 <div className={styles.contentRight}>
-                    <img src={Img} alt="Get started image" />
+                    <img src="/images/getstarted.jpg" alt="Get started image" />
                 </div>
             </div>
         </section>

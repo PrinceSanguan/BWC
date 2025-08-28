@@ -32,7 +32,7 @@ export default function CompareSection() {
             <div className={styles.compareCard} key={i}>
               <div className={styles.compareBgIcon} aria-hidden="true" >
                 {IconComponent ? (
-                  <IconComponent className={styles.compareIcon} size={40} strokeWidth={2} />
+                  <IconComponent className={styles.compareIcon} width={40} height={40} strokeWidth={2} />
                 ) : (
                   <span className={styles.missingIcon}>{value.icon}</span>
                 )}

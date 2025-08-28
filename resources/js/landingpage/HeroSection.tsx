@@ -1,5 +1,5 @@
 import styles from './HeroSection.module.css';
-import Img from '/home/natty/BWC/public/images/heroPic.png';
+
 
 
 export default function HeroSection() {
@@ -21,7 +21,7 @@ export default function HeroSection() {
           <h3 className={styles.heroBottomText}>Fast replies | No obligation</h3>
         </div>
         <div className={styles.heroRightContent}>
-          <img src={Img} alt="hero image" />
+          <img src="/images/heroPic.png" alt="hero image" />
         </div>
       </div>
       
