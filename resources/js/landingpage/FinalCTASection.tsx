@@ -10,12 +10,9 @@ export default function FinalCTASection() {
         From homes to high-rises, we provide professional and reliable window cleaning services across Bristol.<br />
         Experience the difference a streak-free clean can make.
       </div>
-      <button className={styles.finalCTAButton}>
-        <span className={styles.finalCTAQuoteIcon} aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7.5 15c0-2.5 2-4.5 4.5-4.5V7.5C8.5 7.5 6 10 6 13v2h1.5zm7 0c0-2.5 2-4.5 4.5-4.5V7.5C15.5 7.5 13 10 13 13v2h1.5z" fill="#256193"/></svg>
-        </span>
-        Get a Free Quote
-      </button>
+     <button className={styles.ctaBtn} type="button">
+        <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+        </button>
       <button
         className={styles.finalCTAScrollTop}
         aria-label="Scroll to top"

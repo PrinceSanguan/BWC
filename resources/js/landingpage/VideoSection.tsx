@@ -20,14 +20,14 @@ export default function VideoSection() {
           allowFullScreen
         ></iframe>
       </div>
-      <div className={styles.videoCtas}>
-        <button className={styles.ctaBtn} type="button">
-          <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
-        </button>
-        <button className={styles.secondaryBtn} type="button">
-          See Our Services
-        </button>
-      </div>
+      <div className={styles.buttonGroup}>
+            <button className={styles.heroButton} aria-label="Get a free quote">
+            <button className={styles.ctaBtn} type="button">
+            <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+            </button>
+            </button>
+            <button className={styles.ctaBtn}>See Our Services</button>
+        </div>
     </section>
   );
 }
