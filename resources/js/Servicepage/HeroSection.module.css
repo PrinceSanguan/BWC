@@ -57,37 +57,44 @@
 }
 
 
-.serviceButton {
-  padding: 0.8rem 1.5rem;
-  background: #FDB940;
-  color: white;
+.ctaBtn {
+  background: #ffb800;
+  color: #225b8e;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 2.25rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.375rem;
   cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
-  max-width: 200px;
-  height: 48px;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  margin-top: 2.5rem;
+  box-shadow: 2px 4px 8px rgba(34,91,142,0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.ctaBtn:hover {
+  background: #ffd24d;
+  transform: translateY(-2px) scale(1.04);
+}
+.ctaIcon {
+  display: inline-block;
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 
-.serviceButton:nth-child(4) {
-  background: #fff;
-  color: #000;
-  border: 2px solid #1F5377;
+.ctaBtn:nth-child(2) {
+  background: #ffffff;
+  color: #256193;
+  border: black 1px solid;
+  box-shadow: 2px 4px 8px rgba(37,97,147,0.12);
 }
 
-.serviceButton + .serviceButton {
-  margin-left: 0;
+.ctaBtn:hover {
+  transform: translateY(-2px);
 }
-
-
-.serviceButton:hover {
-  background: #1F5377;
+.ctaBtn:active {
+  transform: translateY(0);
 }
-
 
 .serviceHeroImage{
   width: 100%;
@@ -99,7 +106,40 @@
   object-fit: cover;
 }
 
-/* Tablet styles */
+.buttonGroup{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+
+.serviceButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: nowrap; 
+}
+
+.serviceButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  background: #ffb800;
+  color: #225b8e;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 4px 8px rgba(34,91,142,0.08);
+  gap: 0.5rem;
+}
+
+
+
+
 @media (min-width: 641px) {
   .serviceHeroSection {
     padding: 1rem 1rem 3rem 2rem;

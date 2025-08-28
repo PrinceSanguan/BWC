@@ -116,9 +116,17 @@
   align-self: center;
 }
 
-.contactButton:hover {
-  background: #3892c7;
+.contactButton:hover,
+.contactForm button:hover,
+.contactForm .contactButton:hover {
+  background: #ffd24d;
   transform: translateY(-2px) scale(1.04);
+}
+
+.contactButton:active,
+.contactForm button:active,
+.contactForm .contactButton:active {
+  transform: translateY(0);
 }
 
 .contactInfoContainer{
@@ -218,12 +226,11 @@
   margin-top: 1.5rem;
 }
 
-/* hover state */
 .contactForm button:hover,
 .contactForm .contactButton:hover {
-  background: #3892c7;
   transform: translateY(-2px) scale(1.04);
 }
+
 
 
 @media (max-width: 900px) {

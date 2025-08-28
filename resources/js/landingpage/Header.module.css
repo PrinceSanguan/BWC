@@ -109,8 +109,9 @@
   transform: translateY(-2px) scale(1.04);
 }
 .ctaIcon {
-  font-size: 1.2em;
-  margin-right: 0.25em;
+  display: inline-block;
+  transform: rotate(180deg);
+  transform-origin: center;
 }
 
 @media (max-width: 1100px) {

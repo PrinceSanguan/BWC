@@ -13,8 +13,13 @@ export default function HeroSection() {
             <h2 className={styles.serviceHeroSubtitle}>
               We offer a range of exterior cleaning services for homes and businesses in Bristol.
               Whether you need regular upkeep or a one-off spruce-up, we’ve got you covered.</h2>
-            <button className={styles.serviceButton}> Get a Free Quote</button>
-            <button className={styles.serviceButton}> See Our Services</button>
+
+          <div className={styles.buttonGroup}>
+            <button className={styles.ctaBtn} type="button">
+            <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+            </button>
+            <button className={styles.ctaBtn}>See Our Services</button>
+            </div>
           </div>
           <div className={styles.serviceContentRight}>
             <img src={Img} alt="Service Hero" className={styles.serviceHeroImage} />

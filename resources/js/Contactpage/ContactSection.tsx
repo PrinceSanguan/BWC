@@ -65,7 +65,7 @@ export default function ContactSection() {
               <label htmlFor="message">Optional Notes</label>
               <textarea id="message" name="message" rows={4} placeholder='Anything else you’d like us to know? Leave us a message'></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" className={styles.ctaBtn}>Submit</button>
           </form>
         </div>
       </div>

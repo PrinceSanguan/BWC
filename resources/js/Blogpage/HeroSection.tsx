@@ -16,7 +16,11 @@ export default function HeroSection() {
             Our blog is filled with valuable information designed to help you make informed 
             decisions and discover the true benefits of a professional, streak-free shine.</h2>
           <div className={styles.buttonGroup}>
-            <button className={styles.ctaBtn}>Get a Free Quote</button>
+            <button className={styles.heroButton} aria-label="Get a free quote">
+            <button className={styles.ctaBtn} type="button">
+            <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+            </button>
+            </button>
             <button className={styles.ctaBtn}>See Our Services</button>
           </div>
         </div>
