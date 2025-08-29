@@ -1,3 +1,70 @@
+.logoImg {
+  width: 90px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+.mobileNav .ctaBtn {
+  display: flex !important;
+  width: 100%;
+  justify-content: center;
+}
+/* Hamburger menu styles */
+.hamburgerMenuOnly {
+  display: none;
+}
+.hamburgerMenuWrapper {
+  position: relative;
+}
+.hamburgerBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  align-items: center;
+  z-index: 300;
+}
+.hamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28em;
+  width: 2em;
+  height: 2em;
+  justify-content: center;
+}
+.hamburgerIcon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #225b8e;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.mobileNav {
+  position: absolute;
+  top: 2.7em;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(34,91,142,0.13);
+  border-radius: 0.7em;
+  padding: 1.2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  min-width: 180px;
+  z-index: 250;
+}
+.mobileNav a {
+  color: #225b8e;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobileNav a:hover {
+  color: #ffb800;
+}
 .logoPlaceholder {
   width: 90px;
   height: 48px;
@@ -34,10 +101,11 @@
   gap: 0.75rem;
 }
 .logoImg {
-  width: 90px;
+  width: 180px;
   height: auto;
   display: block;
   margin-right: 0.5rem;
+  max-height: 150px;
 }
 .logoTextBlock {
   display: flex;
@@ -115,9 +183,15 @@
 }
 
 @media (max-width: 1100px) {
+  .hamburgerMenuOnly {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+  }
   .mainHeader {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem 1rem 1rem 1rem;
     gap: 1rem;
   }
@@ -127,17 +201,17 @@
     max-width: 220px;
   }
   .navBar {
-    gap: 1.2rem;
+    display: none;
   }
-  .ctaBtn {
-    width: 100%;
-    justify-content: center;
+  header .ctaBtn {
+    display: none;
   }
 }
 @media (max-width: 640px) {
   .mainHeader {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 0.75rem 0.5rem 0.75rem 0.5rem;
     gap: 0.75rem;
   }
@@ -146,14 +220,22 @@
     max-width: 150px;
   }
   .navBar {
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    display: none;
+  }
+  .hamburgerMenuOnly {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+  }
+  header .ctaBtn {
+    display: none;
   }
   .ctaBtn {
     font-size: 0.95rem;
     padding: 0.65rem 1.5rem;
   }
   .logoImg {
-    width: 60px;
+    width: 140px;
+    max-height: 110px;
   }
 }

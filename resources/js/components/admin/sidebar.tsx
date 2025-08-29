@@ -46,46 +46,6 @@ export function Sidebar({ user }: SidebarProps) {
                         </Button>
                     </Link>
 
-                    {/* New navigation items */}
-                    <Button
-                        variant="ghost"
-                        className="flex w-full items-center justify-start gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                    >
-                        <Users size={18} />
-                        Users
-                    </Button>
-
-                    <Button
-                        variant="ghost"
-                        className="flex w-full items-center justify-start gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                    >
-                        <BarChart size={18} />
-                        Analytics
-                    </Button>
-
-                    <Button
-                        variant="ghost"
-                        className="flex w-full items-center justify-start gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                    >
-                        <CreditCard size={18} />
-                        Billing
-                    </Button>
-
-                    <Button
-                        variant="ghost"
-                        className="flex w-full items-center justify-start gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                    >
-                        <Share size={18} />
-                        Referral
-                    </Button>
-
-                    <Button
-                        variant="ghost"
-                        className="flex w-full items-center justify-start gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-                    >
-                        <MessageSquare size={18} />
-                        Feedback
-                    </Button>
                 </nav>
             </div>
 

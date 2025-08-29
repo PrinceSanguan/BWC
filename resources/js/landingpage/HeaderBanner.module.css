@@ -1,3 +1,6 @@
+.bannerCol:first-child {
+  justify-content: flex-start;
+}
 .headerBanner {
   width: 100%;
   background: #3a8dc6;
@@ -7,11 +10,12 @@
   justify-content: space-between;
   font-size: 1.05rem;
   font-weight: 500;
-  padding: 0.45rem 0.5rem 0.45rem 0.5rem;
+  padding: 0.45rem 2rem 0.45rem 2rem;
   letter-spacing: 0.01em;
   min-height: 2.2rem;
   box-shadow: 0 1px 6px rgba(37,97,147,0.08);
   z-index: 200;
+  gap: 0.5rem;
 }
 .bannerCol {
   flex: 1 1 0;
@@ -20,6 +24,7 @@
   justify-content: center;
   min-width: 0;
   white-space: nowrap;
+  /* Remove forced centering for equal spacing */
 }
 .bannerEmail {
   font-size: 1rem;
@@ -54,13 +59,18 @@
   .headerBanner {
     font-size: 0.98rem;
     flex-direction: column;
-    gap: 0.2em;
+    gap: 0.3em;
     padding: 0.4rem 0.2rem;
     min-height: unset;
+    align-items: stretch;
   }
   .bannerCol {
     justify-content: center !important;
-    margin-bottom: 0.1em;
+    margin-bottom: 0;
+    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+    /* Ensure equal width for all columns */
   }
   .bannerRight {
     flex-direction: column;

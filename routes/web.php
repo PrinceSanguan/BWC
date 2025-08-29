@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogController;
+
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\GuestMiddleware;
@@ -30,10 +32,7 @@ Route::get('/services/soffit-fascia', [ServicesController::class, 'soffitFascia'
 Route::get('/testimonials', [TestimonialsController::class, 'index']);
 
 Route::get('/areas', [AreasController::class, 'index']);
-Route::get('/areas/south', [AreasController::class, 'south']);
 Route::get('/areas/east', [AreasController::class, 'east']);
-Route::get('/areas/central', [AreasController::class, 'central']);
-Route::get('/areas/north', [AreasController::class, 'north']);
 
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/team', [AboutController::class, 'team']);
@@ -41,9 +40,7 @@ Route::get('/team', [AboutController::class, 'team']);
 Route::get('/contact', [ContactController::class, 'index']);
 
 /*
-|--------------------------------------------------------------------------
 | This controller handles Login Logic
-|--------------------------------------------------------------------------
 */
 
 use App\Http\Controllers\Auth\LoginController;
@@ -89,6 +86,12 @@ Route::middleware([AdminMiddleware::class])->group(function () {
   // Dashboard
   Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
+  // Blog CRUD
+  Route::get('admin/blogs', [BlogController::class, 'index']);
+  Route::post('admin/blogs', [BlogController::class, 'store']);
+  Route::put('admin/blogs/{blog}', [BlogController::class, 'update']);
+  Route::delete('admin/blogs/{blog}', [BlogController::class, 'destroy']);
+
   // Settings
   Route::get('admin/settings', [SettingsController::class, 'index'])->name('admin.settings');
   Route::put('admin/settings/profile', [SettingsController::class, 'updateProfile'])->name('admin.settings.updateProfile');
@@ -117,5 +120,16 @@ Route::middleware([UserMiddleware::class])->group(function () {
 });
 
 
-use App\Http\Controllers\BlogsController;
-Route::get('/blogs', [BlogsController::class, 'index']);
+use App\Models\Blog;
+Route::get('/blogs', function () {
+  $blogs = Blog::all();
+  return Inertia::render('Blogs', [
+    'blogs' => $blogs
+  ]);
+});
+
+// TEMP DEBUG ROUTE: View all blogs as JSON
+
+Route::get('/debug/blogs', function () {
+  return Blog::all();
+});

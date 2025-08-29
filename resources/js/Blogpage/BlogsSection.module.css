@@ -1,3 +1,11 @@
+.clamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
+}
 .servicesSection {
   padding: 2rem 1rem 3rem;
   background: #f9f9f9;

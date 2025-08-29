@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Left: Logo, mission, social */}
         <div className={styles.footerColLeft}>
           <div className={styles.footerLogoWrap}>
-            <div className={styles.footerLogoPlaceholder}>LOGO</div>
+            <img src="/images/8f11858a-851a-45be-94a6-0df380a91a71-removebg-preview.png" alt="Company Logo" className={styles.footerLogo} />
           </div>
           <div className={styles.footerMission}>
             Our mission is that to offer you the best possible window cleaning service in Bristol. There is only one thing worse than a dirty window and that is a poorly cleaned one!

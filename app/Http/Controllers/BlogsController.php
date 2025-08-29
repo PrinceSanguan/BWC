@@ -12,7 +12,6 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        // Render the Inertia Blogs page (resources/js/pages/Blogs.tsx)
-        return Inertia::render('Blogs');
+        return response()->json(\App\Models\Blog::all());
     }
 }

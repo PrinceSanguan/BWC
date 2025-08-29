@@ -5,13 +5,13 @@ import HeroSection from '../Blogpage/HeroSection';
 import BlogsSection from '../Blogpage/BlogsSection';
 import FinalCTASection from '@/landingpage/FinalCTASection';
 
-export default function Blogs() {
+export default function Blogs({ blogs }: { blogs: any[] }) {
   return (
     <>
       <Header />
       <div>
         <HeroSection />
-        <BlogsSection />
+        <BlogsSection blogs={blogs} />
         <FinalCTASection />   
       </div>
       <Footer />

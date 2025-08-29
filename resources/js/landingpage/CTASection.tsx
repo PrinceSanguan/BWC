@@ -5,7 +5,7 @@ export default function CTASection() {
     <section className={styles.ctaSection} aria-label="Who We Are">
       <div className={styles.ctaContainer}>
         <div className={styles.ctaLogoCol}>
-          <div className={styles.logoPlaceholder}>LOGO</div>
+          <img src="/images/Group 2.webp" alt="Invisible Window Cleaning logo" className={styles.ctaLogoImg} />
         </div>
         <div className={styles.ctaTextCol}>
           <h2 className={styles.ctaTitle}>

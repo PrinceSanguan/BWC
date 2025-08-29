@@ -17,10 +17,8 @@ export default function HeroSection() {
             <li>Guaranteed finish.</li>
             <li>Text reminders before every clean</li>
           </ul>
-          <button className={styles.heroButton} aria-label="Get a free quote">
-          <button className={styles.ctaBtn} type="button">
-          <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
-          </button>
+          <button className={styles.ctaBtn} type="button" aria-label="Get a free quote">
+            <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
           </button>
           <h3 className={styles.heroBottomText}>Fast replies | No obligation</h3>
         </div>
