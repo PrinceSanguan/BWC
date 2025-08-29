@@ -43,9 +43,10 @@ export default function BlogsSection({ blogs }: { blogs: Blog[] }) {
         {blogs.map((blog: Blog) => (
           <article className={styles.serviceCard} key={blog.id}>
             {blog.image && <img src={`/storage/${blog.image}`} alt={blog.title} className={styles.serviceImage} />}
-            <h3 className={styles.serviceName}>{blog.title}</h3>
+            <h3 className={styles.serviceName} style={{ textAlign: 'left' }}>{blog.title}</h3>
             <div
               className={styles.serviceDesc + ' ' + styles.clamp3}
+              style={{ textAlign: 'left' }}
               dangerouslySetInnerHTML={{ __html: blog.description }}
             />
             <button className={styles.readMoreButton} onClick={() => setOpenBlog(blog)}>Read more</button>
