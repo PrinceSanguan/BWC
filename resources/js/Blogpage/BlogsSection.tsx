@@ -64,13 +64,17 @@ export default function BlogsSection({ blogs }: { blogs: Blog[] }) {
               .ql-editor h5 { font-size: 1em; font-weight: bold; margin: 1.5em 0; }
               .ql-editor h6 { font-size: 0.9em; font-weight: bold; margin: 1.67em 0; }
               .ql-editor { font-size: 1.125rem; font-family: inherit; }
+              .ql-editor a { color: #2563eb; text-decoration: underline; cursor: pointer; word-break: break-all; }
+              .ql-editor a:hover { color: #1d4ed8; text-decoration: underline; }
             `}</style>
             {openBlog.image && <img src={`/storage/${openBlog.image}`} alt={openBlog.title} style={{ width: '100%', height: 'auto', borderRadius: 8, marginBottom: 16, display: 'block' }} />}
             <h1 style={{ fontSize: '2.5em', fontWeight: 700, marginBottom: 12, textAlign: 'left' }}>{openBlog.title}</h1>
             <div
-              dangerouslySetInnerHTML={{ __html: openBlog.description }}
               className="ql-editor"
               style={{ color: '#222', textAlign: 'left', margin: 0, padding: 0, fontFamily: 'inherit' }}
+              dangerouslySetInnerHTML={{
+                __html: openBlog.description.replace(/<a /g, '<a target="_blank" rel="noopener noreferrer" ')
+              }}
             />
           </div>
         )}
