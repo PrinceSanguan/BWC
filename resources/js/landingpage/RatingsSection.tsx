@@ -1,4 +1,9 @@
 import styles from './RatingsSection.module.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ImpactCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
   return (
@@ -11,8 +16,62 @@ function ImpactCard({ icon, value, label }: { icon: React.ReactNode; value: stri
 }
 
 export default function RatingsSection() {
-  return (
-    <section className={styles.ratingsSection} aria-label="Impact By The Numbers">
+  
+ const sectionRef = useRef<HTMLDivElement>(null); 
+
+
+ useEffect(() => {   
+   const section = sectionRef.current;
+   if (!section) return;
+
+   const cards = section.querySelectorAll(`.${styles.impactCard}`);
+   const title = section.querySelector(`.${styles.ratingsTitle}`);
+   const subtitle = section.querySelector(`.${styles.impactSubtitle}`);
+
+   const tl = gsap.timeline({
+     scrollTrigger: {
+       trigger: section,
+       start: "top 80%",
+       end: "bottom 20%",
+       toggleActions: "play none none reverse"
+     }
+   });
+
+   tl.set([title, ...cards, subtitle], { opacity: 0, y: 50 })
+     .to(title, {
+       opacity: 1,
+       y: 0,
+       duration: 0.6,
+       ease: 'power3.out',
+     })
+     .to([cards[1], cards[2]], {
+       opacity: 1,
+       y: 0,
+       duration: 0.6,
+       stagger: 0.1,
+       ease: 'power3.out',
+     }, "+=0.2")
+     .to([cards[0], cards[3]], {
+       opacity: 1,
+       y: 0,
+       duration: 0.6,
+       stagger: 0.2,
+       ease: 'power3.out',
+     }, "+=0.2")
+     .to(subtitle, {
+       opacity: 1,
+       y: 0,
+       duration: 0.4,
+       ease: 'power3.out',
+     }, "+=0.2");
+
+   return () => {
+     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+   };
+ }, []);
+  
+ return (
+    <section ref={sectionRef} className={styles.ratingsSection} aria-label="Impact By The Numbers">
       <h2 className={styles.ratingsTitle}>
         Our <span className={styles.impactAccent}>Impact</span> By The Numbers
       </h2>

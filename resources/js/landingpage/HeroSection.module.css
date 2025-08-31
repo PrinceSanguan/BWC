@@ -13,15 +13,24 @@
 }
 
 .heroGlassEffect {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   width: 100%;
   max-width: 90rem;
   height: auto;
-  background: rgba(31, 83, 119, 0.1);
-  box-shadow: inset 18px 18px 10px -20px #FFFFFF, inset -14px -14px 17px -12px #B3B3B3;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(31, 83, 119, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 75%,
+    rgba(31, 83, 119, 0.2) 100%
+  );
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 2px 4px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
   border-radius: 5rem;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   position: relative;
   display: flex;
   flex-direction: row;
@@ -29,6 +38,12 @@
   align-items: flex-start;
   padding: 5rem;
   gap: 4rem;
+  transition: backdrop-filter 0.8s ease-in-out;
+}
+
+.heroGlassEffect.blurred {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 
