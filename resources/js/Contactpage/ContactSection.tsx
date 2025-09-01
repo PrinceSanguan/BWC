@@ -1,13 +1,67 @@
 import styles from './ContactSection.module.css';
-import Img from '/public/images/contact.avif'
-import { PhoneCall, Mail,  } from 'lucide-react';
+import Img from '/public/images/contact.avif';
+import { PhoneCall, Mail } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { animate } from 'animejs';
 
 export default function ContactSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Pop the whole section
+            if (sectionRef.current) {
+              animate(sectionRef.current, {
+                opacity: [0, 1],
+                scale: [0.8, 1],
+                duration: 1000,
+                easing: 'easeOutQuad',
+              });
+            }
+            // Then animate left section from left
+            if (leftRef.current) {
+              animate(leftRef.current, {
+                opacity: [0, 1],
+                translateX: [-100, 0],
+                duration: 1000,
+                delay: 500, // Delay after section pop
+                easing: 'easeOutQuad',
+              });
+            }
+            // Then animate right section from right
+            if (rightRef.current) {
+              animate(rightRef.current, {
+                opacity: [0, 1],
+                translateX: [100, 0],
+                duration: 1000,
+                delay: 1000, // Delay after left
+                easing: 'easeOutQuad',
+              });
+            }
+            observer.disconnect(); // Run once
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className={styles.contactSection} aria-label="Contact">
+    <section ref={sectionRef} className={styles.contactSection} aria-label="Contact">
       <div className={styles.contactContainer}>
         
-        <div className={styles.contactInfoSection}>
+        <div ref={leftRef} className={styles.contactInfoSection}>
           <h1 className={styles.contactTitle}>
             Get a <span>Free </span> Quote Today
           </h1>
@@ -33,8 +87,7 @@ export default function ContactSection() {
             </div>
         </div>
 
-
-        <div className={styles.contactFormSection}>
+        <div ref={rightRef} className={styles.contactFormSection}>
           <form className={styles.contactForm}>
             <div className={styles.formGroup}>
               <label htmlFor="name">Full Name *</label>
