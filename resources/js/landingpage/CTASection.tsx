@@ -1,57 +1,72 @@
 import styles from './CTASection.module.css';
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-
+import { animate } from 'animejs';
 
 export default function CTASection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
   useEffect(() => {
+    // Set initial hidden state for all elements
     const element = sectionRef.current;
-    if (!element) return;
+    if (element) {
+      const logoCol = element.querySelector(`.${styles.ctaLogoCol}`);
+      const textCol = element.querySelector(`.${styles.ctaTextCol}`);
+      if (logoCol) {
+        (logoCol as HTMLElement).style.opacity = '0';
+        (logoCol as HTMLElement).style.transform = 'translateX(-100px)';
+      }
+      if (textCol) {
+        (textCol as HTMLElement).style.opacity = '0';
+        (textCol as HTMLElement).style.transform = 'translateX(100px)';
+      }
+    }
 
-    const logoCol = element.querySelector(`.${styles.ctaLogoCol}`);
-    const textCol = element.querySelector(`.${styles.ctaTextCol}`);
+    const handleScroll = () => {
+      if (hasAnimated.current) return;
+      const element = sectionRef.current;
+      if (!element) return;
+      const rect = element.getBoundingClientRect();
+      const sectionMiddle = rect.top + rect.height / 2;
+      const viewportMiddle = window.innerHeight / 2;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        logoCol,
-        { x: -100, autoAlpha: 0 },
-        {
-          x: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: element,
-            start: 'center center',
-            toggleActions: 'play none none none',
-          },
+      // Trigger when the section's middle is within 100px of viewport center
+      if (Math.abs(sectionMiddle - viewportMiddle) < 100) {
+        const logoCol = element.querySelector(`.${styles.ctaLogoCol}`);
+        const textCol = element.querySelector(`.${styles.ctaTextCol}`);
+
+        // Animate logoCol from left
+        if (logoCol) {
+          animate(logoCol, {
+            opacity: [0, 1],
+            translateX: [-100, 0],
+            duration: 1000,
+            easing: 'easeOutQuad',
+          });
         }
-      );
-      gsap.fromTo(
-        textCol,
-        { x: 100, autoAlpha: 0 },
-        {
-          x: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: element,
-            start: 'center center',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    }, element);
 
-    return () => ctx.revert();
+        // Animate textCol from right
+        if (textCol) {
+          animate(textCol, {
+            opacity: [0, 1],
+            translateX: [100, 0],
+            duration: 1000,
+            easing: 'easeOutQuad',
+          });
+        }
+
+        hasAnimated.current = true;
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
-
 
   return (
     <section ref={sectionRef} className={styles.ctaSection} aria-label="Who We Are">

@@ -1,13 +1,54 @@
-
 import styles from './Footer.module.css';
 import { Phone, Mail, MessageCircle, Facebook } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { animate } from 'animejs';
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+  const colLeftRef = useRef<HTMLDivElement>(null);
+  const colMidRef = useRef<HTMLDivElement>(null);
+  const colRightRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Set initial hidden state for each column
+    [colLeftRef.current, colMidRef.current, colRightRef.current].forEach(col => {
+      if (col) {
+        col.style.opacity = '0';
+        col.style.transform = 'translateY(50px)';
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate all columns together
+            animate([colLeftRef.current, colMidRef.current, colRightRef.current], {
+              opacity: [0, 1],
+              translateY: [50, 0],
+              duration: 800,
+              easing: 'easeOutQuad',
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observe the entire footer
+    if (footerRef.current) observer.observe(footerRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <footer className={styles.mainFooter} aria-label="Footer">
+    <footer ref={footerRef} className={styles.mainFooter} aria-label="Footer">
       <div className={styles.footerGrid}>
         {/* Left: Logo, mission, social */}
-        <div className={styles.footerColLeft}>
+        <div ref={colLeftRef} className={styles.footerColLeft}>
           <div className={styles.footerLogoWrap}>
             <img src="/images/8f11858a-851a-45be-94a6-0df380a91a71-removebg-preview.png" alt="Company Logo" className={styles.footerLogo} />
           </div>
@@ -26,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Middle: Contact, Company, Services */}
-        <div className={styles.footerColMid}>
+        <div ref={colMidRef} className={styles.footerColMid}>
           <div className={styles.footerContactBlock}>
             <div className={styles.footerContactRow}>
               <span className={styles.footerContactIcon}>
@@ -65,7 +106,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Right: Location, hours */}
-        <div className={styles.footerColRight}>
+        <div ref={colRightRef} className={styles.footerColRight}>
           <div className={styles.footerLocationTitle}><b>Location</b></div>
           <div className={styles.footerLocationAddr}>Bristol BS8 2SB<br />195 Whiteladies Road</div>
           <div className={styles.footerOpenTitle}><b>Open Hours</b></div>

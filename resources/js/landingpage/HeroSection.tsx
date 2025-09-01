@@ -1,12 +1,8 @@
 import styles from './HeroSection.module.css';
-import { gsap } from 'gsap';
+import { animate, stagger } from 'animejs';
 import { useEffect, useRef, useState } from 'react';
 
-
-
-
 export default function HeroSection() {
-
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
@@ -17,32 +13,33 @@ export default function HeroSection() {
   const [isBlurred, setIsBlurred] = useState(false);
 
   useEffect(() => {
-    const timeline = gsap.timeline();
-    
-    if (heroRef.current && titleRef.current && subtitleRef.current && 
-        listRef.current && buttonRef.current && bottomTextRef.current && imageRef.current) {
-      
-      // Set initial states for all elements
-      gsap.set([titleRef.current, subtitleRef.current, listRef.current, 
-               buttonRef.current, bottomTextRef.current, imageRef.current], 
-        { opacity: 0, y: 30 }
-      );
+    if (
+      titleRef.current &&
+      subtitleRef.current &&
+      listRef.current &&
+      buttonRef.current &&
+      bottomTextRef.current &&
+      imageRef.current
+    ) {
+      setTimeout(() => setIsBlurred(true), 200);
 
-      // Animation sequence: clear -> blur -> all text appears
-      timeline
-        // First, blur the glass quickly
-        .call(() => {
-          setIsBlurred(true);
-        }, [], 0.2)
-        // Then animate all text elements together after blur completes
-        .to([titleRef.current, subtitleRef.current, listRef.current, 
-             buttonRef.current, bottomTextRef.current, imageRef.current], {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          stagger: 0.1
-        }, "+=0.8");
+      animate(
+        [
+          titleRef.current,
+          subtitleRef.current,
+          listRef.current,
+          buttonRef.current,
+          bottomTextRef.current,
+          imageRef.current,
+        ],
+        {
+          opacity: [0, 1],
+          translateY: [30, 0],
+          delay: stagger(100, { start: 800 }),
+          duration: 800,
+          easing: 'easeOutQuad',
+        }
+      );
     }
   }, []);
 
@@ -69,7 +66,6 @@ export default function HeroSection() {
           <img ref={imageRef} src="/images/heroPic.png" alt="hero image" />
         </div>
       </div>
-      
     </section>
   );
 }

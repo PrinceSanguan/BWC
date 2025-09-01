@@ -1,9 +1,6 @@
 import styles from './RatingsSection.module.css';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { animate } from 'animejs';
 
 function ImpactCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
   return (
@@ -16,61 +13,99 @@ function ImpactCard({ icon, value, label }: { icon: React.ReactNode; value: stri
 }
 
 export default function RatingsSection() {
-  
- const sectionRef = useRef<HTMLDivElement>(null); 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
 
+  useEffect(() => {
+    // Set initial hidden state for all elements
+    const section = sectionRef.current;
+    if (section) {
+      const cards = section.querySelectorAll(`.${styles.impactCard}`);
+      const title = section.querySelector(`.${styles.ratingsTitle}`);
+      const subtitle = section.querySelector(`.${styles.impactSubtitle}`);
+      
+      // Set initial styles programmatically
+      [title, ...cards, subtitle].forEach(el => {
+        if (el) {
+          (el as HTMLElement).style.opacity = '0';
+          (el as HTMLElement).style.transform = 'translateY(50px)';
+        }
+      });
+    }
 
- useEffect(() => {   
-   const section = sectionRef.current;
-   if (!section) return;
+    const handleScroll = () => {
+      if (hasAnimated.current) return;
+      const section = sectionRef.current;
+      if (!section) return;
+      const rect = section.getBoundingClientRect();
+      const sectionMiddle = rect.top + rect.height / 2;
+      const viewportMiddle = window.innerHeight / 2;
 
-   const cards = section.querySelectorAll(`.${styles.impactCard}`);
-   const title = section.querySelector(`.${styles.ratingsTitle}`);
-   const subtitle = section.querySelector(`.${styles.impactSubtitle}`);
+      // Animate when the section's middle is within 100px of viewport center
+      if (Math.abs(sectionMiddle - viewportMiddle) < 100) {
+        const cards = Array.from(section.querySelectorAll(`.${styles.impactCard}`));
+        const title = section.querySelector(`.${styles.ratingsTitle}`);
+        const subtitle = section.querySelector(`.${styles.impactSubtitle}`);
 
-   const tl = gsap.timeline({
-     scrollTrigger: {
-       trigger: section,
-       start: "top 80%",
-       end: "bottom 20%",
-       toggleActions: "play none none reverse"
-     }
-   });
+        // Title animation
+        if (title) {
+          animate(title, {
+            opacity: [0, 1],
+            translateY: [50, 0],
+            duration: 600,
+            easing: 'easeOutQuad',
+          });
+        }
 
-   tl.set([title, ...cards, subtitle], { opacity: 0, y: 50 })
-     .to(title, {
-       opacity: 1,
-       y: 0,
-       duration: 0.6,
-       ease: 'power3.out',
-     })
-     .to([cards[1], cards[2]], {
-       opacity: 1,
-       y: 0,
-       duration: 0.6,
-       stagger: 0.1,
-       ease: 'power3.out',
-     }, "+=0.2")
-     .to([cards[0], cards[3]], {
-       opacity: 1,
-       y: 0,
-       duration: 0.6,
-       stagger: 0.2,
-       ease: 'power3.out',
-     }, "+=0.2")
-     .to(subtitle, {
-       opacity: 1,
-       y: 0,
-       duration: 0.4,
-       ease: 'power3.out',
-     }, "+=0.2");
+        // Middle cards (index 1 and 2)
+        const middleCards = [cards[1], cards[2]].filter(Boolean);
+        if (middleCards.length) {
+          animate(middleCards, {
+            opacity: [0, 1],
+            translateY: [50, 0],
+            duration: 600,
+            easing: 'easeOutQuad',
+            delay: 200 // delay after title
+          });
+        }
 
-   return () => {
-     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-   };
- }, []);
-  
- return (
+        // Side cards (index 0 and 3)
+        const sideCards = [cards[0], cards[3]].filter(Boolean);
+        if (sideCards.length) {
+          animate(sideCards, {
+            opacity: [0, 1],
+            translateY: [50, 0],
+            duration: 600,
+            easing: 'easeOutQuad',
+            delay: 400 // more delay for the side cards
+          });
+        }
+
+        // Subtitle animation
+        if (subtitle) {
+          animate(subtitle, {
+            opacity: [0, 1],
+            translateY: [50, 0],
+            duration: 600,
+            easing: 'easeOutQuad',
+            delay: 600 // last element to appear
+          });
+        }
+
+        hasAnimated.current = true;
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
     <section ref={sectionRef} className={styles.ratingsSection} aria-label="Impact By The Numbers">
       <h2 className={styles.ratingsTitle}>
         Our <span className={styles.impactAccent}>Impact</span> By The Numbers
