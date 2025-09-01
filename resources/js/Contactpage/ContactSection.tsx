@@ -23,21 +23,21 @@ export default function ContactSection() {
                 easing: 'easeOutQuad',
               });
             }
-            // Then animate left section from left
+            // Then pop left section
             if (leftRef.current) {
               animate(leftRef.current, {
                 opacity: [0, 1],
-                translateX: [-100, 0],
+                scale: [0.8, 1],
                 duration: 1000,
                 delay: 500, // Delay after section pop
                 easing: 'easeOutQuad',
               });
             }
-            // Then animate right section from right
+            // Then pop right section
             if (rightRef.current) {
               animate(rightRef.current, {
                 opacity: [0, 1],
-                translateX: [100, 0],
+                scale: [0.8, 1],
                 duration: 1000,
                 delay: 1000, // Delay after left
                 easing: 'easeOutQuad',

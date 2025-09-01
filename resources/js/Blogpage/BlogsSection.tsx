@@ -1,13 +1,13 @@
 
 import 'react-quill/dist/quill.snow.css';
 import styles from './BlogsSection.module.css';
-
 import { useState, useEffect } from 'react';
+
 function Modal({ open, onClose, children }: { open: boolean; onClose: () => void; children: React.ReactNode }) {
   if (!open) return null;
   return (
     <div style={{ position: 'fixed', inset: 0, zIndex: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.2)', backdropFilter: 'blur(2px)' }}>
-  <div style={{ background: 'white', borderRadius: 12, boxShadow: '0 2px 16px rgba(0,0,0,0.2)', minWidth: 900, maxWidth: 1600, width: '100%', padding: 32, position: 'relative', height: 700, maxHeight: 700, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ background: 'white', borderRadius: 12, boxShadow: '0 2px 16px rgba(0,0,0,0.2)', minWidth: 900, maxWidth: 1600, width: '100%', padding: 32, position: 'relative', height: 700, maxHeight: 700, display: 'flex', flexDirection: 'column' }}>
         <button onClick={onClose} style={{ position: 'absolute', top: 12, right: 20, fontSize: 28, color: '#888', background: 'none', border: 'none', cursor: 'pointer' }}>&times;</button>
         <div style={{ overflowY: 'auto', height: '100%' }}>
           {children}
@@ -37,6 +37,7 @@ export default function BlogsSection({ blogs }: { blogs: Blog[] }) {
       document.body.style.overflow = '';
     };
   }, [openBlog]);
+
   return (
     <section className={styles.servicesSection} aria-label="Our Blogs">
       <div className={styles.servicesGrid}>
