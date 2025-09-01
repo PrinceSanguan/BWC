@@ -10,11 +10,12 @@
 .testimonialTitle {
   font-size: 2rem;
   font-weight: 600;
-  color: #000;
+  color: black;
   margin-bottom: 1.2rem;
 }
 
-.testimonialTitle span{
+
+.testimonialTitle span:nth-child(2) {
   color: #256193;
 }
 
