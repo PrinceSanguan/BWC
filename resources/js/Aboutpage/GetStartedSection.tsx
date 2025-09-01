@@ -1,11 +1,58 @@
-import styles  from "../Aboutpage/GetStartedSection.module.css";
-
+import styles from "../Aboutpage/GetStartedSection.module.css";
+import { useEffect, useRef } from "react";
+import { animate } from "animejs";
 
 export default function GetStartedSection() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const leftRef = useRef<HTMLDivElement>(null);
+    const rightRef = useRef<HTMLDivElement>(null);
+    
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (leftRef.current && rightRef.current) {
+                            // Animate left text from left
+                            animate(leftRef.current, {
+                                translateX: [-100, 0],
+                                opacity: [0, 1],
+                                duration: 1000,
+                                easing: 'easeOutQuad'
+                            });
+                            // Animate right image from right after text
+                            animate(rightRef.current, {
+                                translateX: [100, 0],
+                                opacity: [0, 1],
+                                duration: 1000,
+                                delay: 1000, // Delay to start after text animation
+                                easing: 'easeOutQuad'
+                            });
+                        }
+                        observer.disconnect(); // Run once
+                    }
+                });
+            },
+            {
+                threshold: 0, // Trigger when any part is visible
+                rootMargin: '-50% 0px -50% 0px' // Trigger when the middle of the section is in the middle of the viewport
+            }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    
     return (
-        <section className={styles.getStartedSection}>
+        <section ref={sectionRef} className={styles.getStartedSection}>
             <div className={styles.content}>
-                <div className={styles.contentLeft}>
+                <div ref={leftRef} className={styles.contentLeft}>
                     <h1>
                         <span className={styles.getStartedTitle}>Where It All</span>
                         <span className={styles.getStartedTitle}> Started</span>
@@ -21,7 +68,7 @@ export default function GetStartedSection() {
                     We still carry many of Keith’s old customers — and his high standards.
                     </h2>
                 </div>
-                <div className={styles.contentRight}>
+                <div ref={rightRef} className={styles.contentRight}>
                     <img src="/images/getstarted.jpg" alt="Get started image" />
                 </div>
             </div>
