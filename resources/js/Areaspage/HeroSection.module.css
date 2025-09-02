@@ -200,9 +200,9 @@
   border-radius: 5px;
   text-align: left;             
   position: absolute;
-  left: 10%; /* Reduced from 15% to move slightly left */
+  left: -100px; /* Reduced from 10% to 5% to position it more to the left */
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centers horizontally from the left edge */
   margin: 0;
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
@@ -211,27 +211,20 @@
   .areasHeroImageCaptionContainer {
     width: 280px;
     height: 80px;
-    left: 20%;
+    left: 10%; /* Reduced from 20% to 10% to keep it more to the left on larger screens */
+    transform: translate(-50%, -50%);
   }
 }
 
 @media (max-width: 768px) {
   .areasHeroImageCaptionContainer {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin: 1rem auto 2rem auto;
-    width: 300px; /* Increased width to accommodate text */
-    height: 85px; /* Slightly increased height */
-    padding-left: 0.8rem;
-    padding-right: 0.8rem; /* Add right padding */
+    display: none; /* Hides the caption container on mobile */
   }
 }
 
 @media (max-width: 480px) {
   .areasHeroImageCaptionContainer {
-    width: 280px; /* Adjusted for very small screens */
+    width: 280px;
     height: 75px;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
@@ -309,7 +302,7 @@
   }
   .areasHeroImageCaptionContainer {
     position: relative;
-    left: auto;
+    left: auto; /* Reset for mobile */
     top: auto;
     transform: none;
     margin: 1rem auto 2rem auto;
