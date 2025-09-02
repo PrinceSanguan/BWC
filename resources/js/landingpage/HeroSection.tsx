@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const titleFirstRef = useRef<HTMLSpanElement>(null);
+  const titleSecondRef = useRef<HTMLSpanElement>(null);
+  const titleThirdRef = useRef<HTMLSpanElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -14,7 +16,9 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (
-      titleRef.current &&
+      titleFirstRef.current &&
+      titleSecondRef.current &&
+      titleThirdRef.current &&
       subtitleRef.current &&
       listRef.current &&
       buttonRef.current &&
@@ -25,7 +29,9 @@ export default function HeroSection() {
 
       animate(
         [
-          titleRef.current,
+          titleSecondRef.current, 
+          titleFirstRef.current,
+          titleThirdRef.current,
           subtitleRef.current,
           listRef.current,
           buttonRef.current,
@@ -35,8 +41,8 @@ export default function HeroSection() {
         {
           opacity: [0, 1],
           translateY: [30, 0],
-          delay: stagger(100, { start: 800 }),
-          duration: 800,
+          delay: stagger(200, { start: 800 }),
+          duration: (el, i) => (i === 1 || i === 2) ? 1000 : 600, // First and third spans slower (1000ms), second faster (600ms)
           easing: 'easeOutQuad',
         }
       );
@@ -47,9 +53,10 @@ export default function HeroSection() {
     <section className={styles.heroSection} aria-label="Hero">
       <div ref={heroRef} className={`${styles.heroGlassEffect} ${isBlurred ? styles.blurred : ''}`}>
         <div className={styles.heroLeftContent}>
-          <h1 ref={titleRef}>
-            <span className={styles.heroTitle}>Invisible Window <br />Cleaning </span> 
-            <span className={styles.heroTitle}> – Crystal-Clear <br />Results Across Bristol</span>
+          <h1>
+            <span ref={titleFirstRef} className={styles.heroTitle} style={{ opacity: 0 }}>Bristol's Most Trusted<br />Cleaning </span> 
+            <span ref={titleSecondRef} className={styles.heroTitle} style={{ opacity: 0 }}> <br />Window Cleaning</span>
+            <span ref={titleThirdRef} className={styles.heroTitle} style={{ opacity: 0 }}> Experts Since 2003</span>
           </h1>
           <h2 ref={subtitleRef} className={styles.heroSubtitle}>Friendly, Local, Fully Insured Window Cleaners for Homes & Businesses</h2>
           <ul ref={listRef} className={styles.heroSubtitle}>

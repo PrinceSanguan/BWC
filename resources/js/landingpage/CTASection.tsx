@@ -79,10 +79,10 @@ export default function CTASection() {
             Who <span className={styles.ctaAccent}>We Are</span>
           </h2>
           <p className={styles.ctaDesc}>
-            Invisible Window Cleaning is a small, independent window cleaning business serving homes and businesses across the Bristol urban area.
+           Invisible Window Cleaning brings over 20 years of combined expertise to every Bristol property. As skilled window cleaning professionals, we've perfected the art of delivering spotless window cleaning results that transform your view.
           </p>
           <p className={styles.ctaDesc}>
-            We’re not a franchise or agency — just a skilled, reliable team who believe in doing the job properly, treating customers well, and being easy to work with.
+            We're not just another local window cleaning company Bristol calls upon – we're trusted window cleaners near me who combine traditional craftsmanship with cutting-edge reach and wash window cleaning technology for superior results
           </p>
         </div>
       </div>

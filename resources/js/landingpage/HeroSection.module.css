@@ -86,13 +86,13 @@
 .heroTitle {
   font-size: 4rem;
   font-weight: 700;
-  color: #FDB940;
+  color: #FFFFFF;
   line-height: 1;
   margin: 0;
 }
 
-.heroTitle:nth-child(2) {
-  color: #FFFFFF;
+.heroTitle:nth-child(2) { /* Changed from nth-child(3) to nth-child(2) for the middle span */
+  color: #FDB940;
   margin-top: -0.5rem;
 }
 
