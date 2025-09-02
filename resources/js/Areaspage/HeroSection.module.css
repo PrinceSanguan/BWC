@@ -8,12 +8,55 @@
   position: relative;
 }
 
+
+.areasHeroMousePointer{
+  width: 33px;
+  height: 33px;
+  margin-right: 0.75rem; 
+  color: #256193;
+  margin-left: 0;       
+  text-align: left;
+  transform: rotate(90deg);
+}
+
+
+/* Responsive padding */
+@media (max-width: 1200px) {
+  .areasHeroSection {
+    padding: 3rem 5rem 2rem 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .areasHeroSection {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
 .areasHeroContent {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  align-items: flex-start;
+  width: 50%;
   max-width: none;
+  gap: 0.5rem;
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .areasHeroContent {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .areasHeroContent {
+    flex-direction: column; /* Ensures vertical stacking: left on top, right below */
+    gap: 2rem; /* Adjust gap for mobile spacing */
+    align-items: center; /* Centers items horizontally */
+    width: 100%; /* Full width on mobile */
+  }
 }
 
 
@@ -22,8 +65,14 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-left: auto;
-  position: relative; 
+  position: relative;
+  flex-shrink: 1;
+}
+
+@media (max-width: 768px) {
+  .areasHeroRightContainer {
+    justify-content: center;
+  }
 }
 
 .areasHeroLeftContainer{
@@ -33,6 +82,15 @@
   align-items: flex-start;
   width: 100%;
   max-width: 750px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .areasHeroLeftContainer {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .areasHeroTitle {
@@ -43,6 +101,25 @@
   margin-bottom: 1.1rem;
   line-height: 1.15;
   text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .areasHeroTitle {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .areasHeroTitle {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .areasHeroTitle {
+    font-size: 2.8rem;
+  }
 }
 
 .areasHeroTitle:nth-child(2) {
@@ -58,6 +135,13 @@
   text-align: left;
 }
 
+@media (max-width: 768px) {
+  .areasHeroSubtitle {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
 .areasHeroImage {
   width: 892px;
   max-width: 892px;
@@ -68,6 +152,42 @@
   top: -100px;
   opacity: 1;
   transform: rotate(0deg);
+}
+
+@media (max-width: 1200px) {
+  .areasHeroImage {
+    width: 700px;
+    max-width: 700px;
+    height: 580px;
+    margin-left: 1rem;
+    top: -80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .areasHeroImage {
+    width: 600px;
+    max-width: 600px;
+    height: 500px;
+    margin-left: 0;
+    top: -60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .areasHeroImage {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    top: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .areasHeroImage {
+    max-width: 350px;
+  }
 }
 .areasHeroImageCaptionContainer {
   display: flex;
@@ -80,11 +200,42 @@
   border-radius: 5px;
   text-align: left;             
   position: absolute;
-  left: 15%;
+  left: 10%; /* Reduced from 15% to move slightly left */
   top: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 1024px) {
+  .areasHeroImageCaptionContainer {
+    width: 280px;
+    height: 80px;
+    left: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .areasHeroImageCaptionContainer {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 1rem auto 2rem auto;
+    width: 300px; /* Increased width to accommodate text */
+    height: 85px; /* Slightly increased height */
+    padding-left: 0.8rem;
+    padding-right: 0.8rem; /* Add right padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .areasHeroImageCaptionContainer {
+    width: 280px; /* Adjusted for very small screens */
+    height: 75px;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
 }
 
 .areasHeroImageCaptionIcon {
@@ -149,4 +300,83 @@
     max-width: 1000px;
     text-align: left;
   }
+}
+
+@media (max-width: 768px) {
+  .areasHeroImageCaption {
+    font-size: 0.85rem; /* Slightly smaller text */
+    line-height: 1.3; /* Tighter line spacing */
+  }
+  .areasHeroImageCaptionContainer {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 1rem auto 2rem auto;
+    width: 300px; /* Increased width to accommodate text */
+    height: 85px; /* Slightly increased height */
+    padding-left: 0.8rem;
+    padding-right: 0.8rem; /* Add right padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .areasHeroImageCaption {
+    font-size: 0.75rem; /* Even smaller on very small screens */
+    line-height: 1.2;
+  }
+  .areasHeroImageCaptionContainer {
+    width: 280px; /* Adjusted for very small screens */
+    height: 75px;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+
+.areasHeroPin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: #256193;
+  z-index: 10;
+}
+
+.pinWrapper {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Hide pins on mobile */
+@media (max-width: 768px) {
+  .pinWrapper {
+    display: none;
+  }
+}
+
+.pinTooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #256193;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pinWrapper:hover .pinTooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.areasHeroPin:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
 }
