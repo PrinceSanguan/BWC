@@ -150,7 +150,7 @@ export default function HeroSection() {
         const scrollY = window.scrollY;
         // Animate pins based on scroll position (parallax effect)
         animate(pinsRef.current, {
-          translateY: (el, i) => -scrollY * 0.05 + (i * 10), // Adjust multiplier for effect strength
+          translateY: ((el: Element, i: number) => -scrollY * 0.05 + (i * 10)) as any, // Suppress TS error, allow animation
           duration: 0
         });
       };
@@ -225,7 +225,7 @@ export default function HeroSection() {
             id="pin-1"
             ref={el => { if (el) pinsRef.current[3] = el; }}
             className={styles.pinWrapper} 
-            style={{ top: '38%', left: '83%', opacity: 0 }} 
+            style={{ top: '38%', left: '78%', opacity: 0 }} 
             onClick={() => handlePinClick(1)}
           >
             <MapPin className={styles.areasHeroPin} />

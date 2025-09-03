@@ -103,7 +103,7 @@ export default function FAQSection() {
 			<div className={styles.faqList}>
 				{faqs.map((faq, i) => (
 					<div
-						ref={(el) => (faqRefs.current[i] = el)}
+						ref={el => { faqRefs.current[i] = el; }}
 						className={styles.faqItem + ' ' + (openIdx === i ? styles.open : '')}
 						key={i}
 					>
