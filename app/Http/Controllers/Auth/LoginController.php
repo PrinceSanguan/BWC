@@ -29,12 +29,19 @@ class LoginController extends Controller
     public function store(Request $request)
     {
 
-        $credentials = $request->validate([
-            'username' => ['required', 'string'],
+        $request->validate([
+            'username' => ['sometimes', 'string'],
+            'email' => ['sometimes', 'string'],
             'password' => ['required'],
         ]);
 
-    if (Auth::attempt($credentials)) {
+        $loginField = $request->input('username') ? 'username' : 'email';
+        $credentials = [
+            $loginField => $request->input($loginField),
+            'password' => $request->input('password'),
+        ];
+
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             // Check user role and redirect accordingly
