@@ -24,10 +24,12 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 
 Route::get('/services', [ServicesController::class, 'index']);
+
 Route::get('/services/domestic', [ServicesController::class, 'domestic']);
 Route::get('/services/commercial', [ServicesController::class, 'commercial']);
 Route::get('/services/gutter', [ServicesController::class, 'gutter']);
 Route::get('/services/soffit-fascia', [ServicesController::class, 'soffitFascia']);
+Route::get('/services/new-service', [ServicesController::class, 'newService']);
 
 Route::get('/testimonials', [TestimonialsController::class, 'index']);
 

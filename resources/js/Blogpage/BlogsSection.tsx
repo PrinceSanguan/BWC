@@ -39,7 +39,7 @@ export default function BlogsSection({ blogs }: { blogs: Blog[] }) {
   }, [openBlog]);
 
   return (
-    <section className={styles.servicesSection} aria-label="Our Blogs">
+    <section className={styles.servicesSection} aria-label="Our Blogs" style={{ background: '#fff' }}>
       <div className={styles.servicesGrid}>
         {blogs.map((blog: Blog) => (
           <article className={styles.serviceCard} key={blog.id}>

@@ -58,7 +58,7 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.contactSection} aria-label="Contact">
+    <section ref={sectionRef} className={styles.contactSection} aria-label="Contact" style={{ background: '#fff' }}>
       <div className={styles.contactContainer}>
         
         <div ref={leftRef} className={styles.contactInfoSection}>

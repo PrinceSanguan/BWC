@@ -92,8 +92,8 @@ export default function FAQSection() {
 		};
 	}, []);
 
-	return (
-		<section ref={sectionRef} className={styles.faqSection} id="faq" aria-label="Frequently Asked Questions">
+		return (
+			<section ref={sectionRef} className={styles.faqSection} id="faq" aria-label="Frequently Asked Questions" style={{ background: '#fff' }}>
 			<h2 className={styles.faqTitle}>
 				Frequently Asked <span className={styles.faqAccent}>Questions</span>
 			</h2>

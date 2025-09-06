@@ -3,17 +3,39 @@ import Img from '/public/images/servicehero.jpg';
 import { useEffect, useRef, useCallback } from 'react';
 import { animate } from 'animejs';
 
+
 type Service = {
   name: string;
   description: string;
   image: string;
+  link: string;
 };
 
 const services: Service[] = [
-  { name: 'Domestic Window Cleaning', description: 'It is a common service nationwide to have your domestic windows cleaned regularly. Having a good regular and reliable window cleaner is hard to come by.', image: Img },
-  { name: 'Commercial Window Cleaning', description: 'Unlike many other Bristol window cleaners, we won’t quit until the job is done to a gold standard. Our commercial window cleaning strategy aims to leave you with a thorough window cleaning job done', image: Img },
-  { name: 'Gutter Clearing', description: 'Don\'t let clogged gutters threaten your home. Our expert gutter clearing service is designed to protect your property from the serious and costly damage that can result from water overflow...', image: Img },
-  { name: 'Soffit, Fascia & Gutter Face Cleaning', description: 'Bring your home\'s exterior back to life with our professional cleaning service for soffits, fascias, and gutter faces. Over time, these areas can become stained with dirt, algae, and grime, making your property look tired and neglected..', image: Img },
+  {
+    name: 'Domestic Window Cleaning',
+  description: "Elevate your home's curb appeal with our professional residential window cleaning service. Using advanced ladder-free technology and eco-friendly solutions, we deliver crystal-clear results that make your windows sparkle. Our Bristol window cleaners understand local needs and provide flexible scheduling that fits your lifestyle, ensuring your home always looks its absolute best.",
+    image: Img,
+    link: '/services/domestic',
+  },
+  {
+    name: 'Commercial Window Cleaning',
+  description: "Make a lasting impression with reliable commercial window cleaning tailored for Bristol businesses. Our professional window cleaning Bristol service includes same day window cleaning for urgent needs, ensuring your premises maintain that polished corporate image. From retail shops to office complexes, we deliver consistent quality that reflects your business standards.",
+    image: Img,
+    link: '/services/commercial',
+  },
+  {
+    name: 'Gutter Clearing',
+  description: "Protect your Bristol property investment with comprehensive gutter cleaning services Bristol homeowners depend on. Our thorough approach prevents costly water damage, removes dangerous blockages, and includes detailed system inspections. Trust our window cleaning company Bristol to keep your gutters flowing perfectly while maintaining your property's structural integrity.",
+    image: Img,
+    link: '/services/gutter',
+  },
+  {
+    name: 'Soffit, Fascia & Gutter Face Cleaning',
+  description: "Experience our complete range of specialist window cleaning services including solar panel cleaning Bristol, signage cleaning Bristol, and soffit maintenance. Our window cleaner Bristol UK team uses cutting-edge techniques to restore and maintain every aspect of your property's exterior, delivering results that exceed expectations every time.",
+    image: Img,
+    link: '/services/soffit-fascia',
+  },
 ];
 
 export default function ServicesSection() {
@@ -90,7 +112,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.servicesSection} aria-label="Our Services">
+    <section ref={sectionRef} className={styles.servicesSection} aria-label="Our Services" style={{ background: '#fff' }}>
       <h2 ref={titleRef} className={styles.servicesTitle}>Our Services</h2>
       <div className={styles.servicesIntro}>
         {services.map((service, i) => (
@@ -104,7 +126,9 @@ export default function ServicesSection() {
             <img src={service.image} alt={service.name} className={styles.serviceImage} />
             <div className={styles.serviceName}>{service.name}</div>
             <div className={styles.serviceDesc}>{service.description}</div>
-            <button className={styles.readMoreButton}>Read more</button>
+            <a href={service.link} className={styles.readMoreButton}>
+              Read more
+            </a>
           </div>
         ))}
       </div>

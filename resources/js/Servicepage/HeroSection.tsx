@@ -70,7 +70,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className={styles.serviceHeroSection} aria-label="Service Hero">
+    <section className={styles.serviceHeroSection} aria-label="Service Hero" style={{ background: '#fff' }}>
         <div className={styles.serviceContent}>
           <div ref={leftRef} className={styles.serviceContentLeft}>
             <h1>

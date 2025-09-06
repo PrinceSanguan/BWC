@@ -72,7 +72,7 @@ export default function HeroSection() {
   }, []);
   
   return (
-    <section ref={sectionRef} className={styles.blogHeroSection} aria-label="Blog Hero">
+    <section ref={sectionRef} className={styles.blogHeroSection} aria-label="Blog Hero" style={{ background: '#fff' }}>
       <div className={styles.blogHeroContent}>
         <div className={styles.imageContainer}>
           <img className={styles.blogHeroImage} src={Img} alt="" />

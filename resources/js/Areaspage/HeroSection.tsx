@@ -162,7 +162,7 @@ export default function HeroSection() {
   }, [scrollAnimationActive]);
 
   return (
-    <section className={styles.areasHeroSection} aria-label="Areas Hero">
+    <section className={styles.areasHeroSection} aria-label="Areas Hero" style={{ background: '#fff' }}>
       <div className={styles.areasHeroContent}>
         <div className={styles.areasHeroLeftContainer}>
           <h1>
