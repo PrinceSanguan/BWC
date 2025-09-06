@@ -13,12 +13,16 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
-            'name' => 'BWC Admin',
-            'username' => 'bwcadmin',
-            'email' => 'bwcadmin@bwc.com', // dummy email, not used for login
-            'password' => bcrypt('adminbwc123'),
-            'user_role' => 'admin',
-        ]);
+        User::updateOrCreate(
+            [
+                'email' => 'bwcadmin@bwc.com',
+            ],
+            [
+                'name' => 'BWC Admin',
+                'username' => 'bwcadmin',
+                'password' => bcrypt('adminbwc123'),
+                'user_role' => 'admin',
+            ]
+        );
     }
 }
