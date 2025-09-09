@@ -113,6 +113,13 @@ export default function Footer() {
           <div className={styles.footerOpenHours}>Mon - Sat: 8 am – 4 pm,<br />Sunday: 10 am – 2 pm</div>
         </div>
       </div>
+      {/* Microformats h-card for organization info */}
+      <div className="h-card" style={{display: 'none'}}>
+        <span className="p-name">Your Company Name</span>
+        <a className="u-url" href="https://yourdomain.com/">https://yourdomain.com/</a>
+        <img className="u-logo" src="https://yourdomain.com/logo.png" alt="Logo" />
+        <span className="p-tel">+1-800-555-1212</span>
+      </div>
     </footer>
   );
 }

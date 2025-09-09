@@ -47,6 +47,20 @@
       }]
     }
     </script>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="A short description of your website or page." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:image" content="https://yourdomain.com/path/to/your-image.jpg" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your Website Title" />
+    <meta name="twitter:description" content="A short description of your website or page." />
+    <meta name="twitter:image" content="https://yourdomain.com/path/to/your-image.jpg" />
+    <meta name="twitter:site" content="@YourTwitterHandle" />
 </head>
 
 <body class="font-sans antialiased">
