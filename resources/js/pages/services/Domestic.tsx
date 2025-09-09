@@ -1,9 +1,8 @@
-
-
 import styles from './HeroSection.module.css';
 import Img from '/public/images/aboutus.png';
 import { useRef, useEffect } from 'react';
 import { animate } from 'animejs';
+import { Head } from '@inertiajs/react';
 
 import Header from '../../landingpage/Header';
 import Footer from '../../landingpage/Footer';
@@ -17,6 +16,9 @@ import CTASection from '../../landingpage/CTASection';
 export default function Domestic() {
   return (
     <>
+      <Head title="Domestic Window Cleaner Bristol | Get Spotless Results Today">
+        <meta name="description" content="Choose Domestic Window Cleaner Bristol for sparkling, streak-free windows—Eco-friendly, insured service tailored for homes. Book your free quote now!" />
+      </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Domestic Window Cleaning">
         <div className={styles.blogHeroContent}>

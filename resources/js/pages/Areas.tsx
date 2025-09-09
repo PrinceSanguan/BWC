@@ -3,10 +3,14 @@ import Footer from '../landingpage/Footer';
 import HeroSection from '../Areaspage/HeroSection';
 import AreasSection from '../Areaspage/AreasSection';
 import FinalCTASection from '@/landingpage/FinalCTASection';
+import { Head } from '@inertiajs/react';
 
 export default function Areas() {
   return (
     <>
+      <Head title="Bristol Window Cleaning | Local Experts Near You">
+        <meta name="description" content="Trusted Bristol window cleaners covering North, South, East & Central. Residential & commercial services with eco-friendly streak-free guarantee." />
+      </Head>
       <Header />
       <div>
         <HeroSection />

@@ -1,8 +1,8 @@
-
 import styles from './HeroSection.module.css';
 import Img from '/public/images/aboutus.png';
 import { useEffect, useRef } from 'react';
 import { animate } from 'animejs';
+import { Head } from '@inertiajs/react';
 
 import Header from '../../landingpage/Header';
 import Footer from '../../landingpage/Footer';
@@ -82,6 +82,9 @@ export default function Gutter() {
 
   return (
     <>
+      <Head title="Gutter Cleaning in Bristol | Expert, Fast & Reliable Service">
+        <meta name="description" content="Reliable Gutter Cleaning in Bristol. Eco-friendly, fully insured, with 20+ years of experience keeping homes safe from water damage. Free quotes!" />
+      </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Gutter Clearing">
         <div className={styles.blogHeroContent}>

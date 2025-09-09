@@ -1,8 +1,8 @@
-
 import styles from './HeroSection.module.css';
 import Img from '/public/images/aboutus.png';
 import { useEffect, useRef } from 'react';
 import { animate } from 'animejs';
+import { Head } from '@inertiajs/react';
 
 import Header from '../../landingpage/Header';
 import Footer from '../../landingpage/Footer';
@@ -82,6 +82,9 @@ export default function Commercial() {
 
   return (
     <>
+      <Head title="Commercial Window Cleaning in Bristol | Experienced Local Professionals">
+        <meta name="description" content="Commercial Window Cleaning in Bristol you can rely on. Eco-friendly, fully insured, ladder-free service delivering streak-free results. Get a free quote today!" />
+      </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Commercial Window Cleaning">
         <div className={styles.blogHeroContent}>

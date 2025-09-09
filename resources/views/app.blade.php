@@ -61,6 +61,8 @@
     <meta name="twitter:description" content="A short description of your website or page." />
     <meta name="twitter:image" content="https://yourdomain.com/path/to/your-image.jpg" />
     <meta name="twitter:site" content="@YourTwitterHandle" />
+
+    <link rel="canonical" href="https://yourdomain.com/" />
 </head>
 
 <body class="font-sans antialiased">

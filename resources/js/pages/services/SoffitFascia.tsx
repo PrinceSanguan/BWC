@@ -1,8 +1,8 @@
-
 import styles from './HeroSection.module.css';
 import Img from '/public/images/aboutus.png';
 import { useEffect, useRef } from 'react';
 import { animate } from 'animejs';
+import { Head } from '@inertiajs/react';
 
 import Header from '../../landingpage/Header';
 import Footer from '../../landingpage/Footer';
@@ -82,6 +82,9 @@ export default function SoffitFascia() {
 
   return (
     <>
+      <Head title="Fascia & Soffit Cleaning Bristol | Restore Your Home’s Shine">
+        <meta name="description" content="Trusted Fascia & Soffit Cleaning Bristol team. Eco-friendly, safe, and fully insured with over 20 years of experience. Bring back your home’s fresh look!" />
+      </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Soffit, Fascia & Gutter Face Cleaning">
         <div className={styles.blogHeroContent}>

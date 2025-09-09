@@ -13,7 +13,9 @@ import FinalCTASection from '@/landingpage/FinalCTASection';
 export default function Welcome() {
   return (
     <>
-      <Head title="Welcome | Landing Page" />
+      <Head title="Bristol Window Cleaners | Professional Service You Can Trust">
+        <meta name="description" content="Choose Bristol Window Cleaners for a spotless finish. Fully insured, eco-friendly, and affordable. Local, reliable, and available 7 days a week." />
+      </Head>
       <div className="landing-page-theme">
         <Header />
         <HeroSection />
