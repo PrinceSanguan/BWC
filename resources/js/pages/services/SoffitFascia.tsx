@@ -83,7 +83,7 @@ export default function SoffitFascia() {
   return (
     <>
       <Head title="Fascia & Soffit Cleaning Bristol | Restore Your Home’s Shine">
-        <meta name="description" content="Trusted Fascia & Soffit Cleaning Bristol team. Eco-friendly, safe, and fully insured with over 20 years of experience. Bring back your home’s fresh look!" />
+        <meta name="description" content="Trusted Fascia & Soffit Cleaning Bristol team. Eco-friendly, safe, and fully insured with over 20 years of experience. We restore soffits, fascias, and gutter faces to their original shine, removing algae, grime, and stains for a fresh, well-cared-for look." />
       </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Soffit, Fascia & Gutter Face Cleaning">

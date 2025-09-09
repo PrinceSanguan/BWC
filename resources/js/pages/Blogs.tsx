@@ -9,7 +9,7 @@ export default function Blogs({ blogs }: { blogs: any[] }) {
   return (
     <>
       <Head title="Bristol Window Cleaning | Streak-Free & Eco-Friendly Experts">
-        <meta name="description" content="Trusted Bristol window cleaners. Streak-free guarantee, eco-friendly methods, and same-day service. Residential, commercial & solar panel cleaning." />
+        <meta name="description" content="Trusted Bristol window cleaners. Streak-free guarantee, eco-friendly methods, and same-day service. We cover residential, commercial, and solar panel cleaning. Read our expert tips, industry news, and discover how to keep your windows spotless all year round." />
       </Head>
       <Header />
       <div>

@@ -14,7 +14,7 @@ export default function Welcome() {
   return (
     <>
       <Head title="Bristol Window Cleaners | Professional Service You Can Trust">
-        <meta name="description" content="Choose Bristol Window Cleaners for a spotless finish. Fully insured, eco-friendly, and affordable. Local, reliable, and available 7 days a week." />
+        <meta name="description" content="Choose Bristol Window Cleaners for a spotless finish. Fully insured, eco-friendly, and affordable. Local, reliable, and available 7 days a week. We offer residential and commercial window cleaning, gutter clearing, and more—trusted by Bristol since 2003." />
       </Head>
       <div className="landing-page-theme">
         <Header />
