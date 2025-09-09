@@ -135,3 +135,23 @@ Route::get('/blogs', function () {
 Route::get('/debug/blogs', function () {
   return Blog::all();
 });
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
+Route::get('/sitemap.xml', function () {
+    $sitemap = Sitemap::create()
+        ->add(Url::create('/'))
+        ->add(Url::create('/services'))
+        ->add(Url::create('/services/domestic'))
+        ->add(Url::create('/services/commercial'))
+        ->add(Url::create('/services/gutter'))
+        ->add(Url::create('/services/soffit-fascia'))
+        ->add(Url::create('/testimonials'))
+        ->add(Url::create('/welcome'))
+        ->add(Url::create('/about'))
+        ->add(Url::create('/areas'))
+        ->add(Url::create('/blogs'))
+        ->add(Url::create('/contact'));
+    // Add more URLs as needed
+    return $sitemap->toResponse(request());
+});
