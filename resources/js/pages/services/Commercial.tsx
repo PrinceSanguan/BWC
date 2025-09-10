@@ -83,7 +83,7 @@ export default function Commercial() {
   return (
     <>
       <Head title="Commercial Window Cleaning in Bristol | Experienced Local Professionals">
-        <meta name="description" content="Commercial Window Cleaning in Bristol you can rely on. Eco-friendly, fully insured, ladder-free service delivering streak-free results for offices, shops, schools, and more. Flexible scheduling, SMS reminders, and post-clean inspections for total peace of mind." />
+        <meta name="description" content="Commercial Window Cleaning in Bristol you can rely on. Eco-friendly, fully insured, ladder-free service delivering streak-free results." />
       </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Commercial Window Cleaning">

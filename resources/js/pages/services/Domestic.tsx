@@ -17,7 +17,7 @@ export default function Domestic() {
   return (
     <>
       <Head title="Domestic Window Cleaner Bristol | Get Spotless Results Today">
-        <meta name="description" content="Choose Domestic Window Cleaner Bristol for sparkling, streak-free windows—Eco-friendly, insured service tailored for homes. Flexible 6-weekly or one-off cleans, SMS reminders, and pure water cleaning. Book your free quote now and enjoy a spotless home year-round!" />
+        <meta name="description" content="Choose Domestic Window Cleaner Bristol for sparkling, streak-free windows—Eco-friendly, insured service tailored for homes. Book your free quote now!" />
       </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Domestic Window Cleaning">

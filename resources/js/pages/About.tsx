@@ -13,7 +13,7 @@ export default function About() {
   return (
     <>
       <Head title="About Us | Your Trusted Bristol Window Cleaners">
-        <meta name="description" content="Bristol Window Cleaners with over 20 years’ experience. Our eco-friendly, fully insured team delivers streak-free results for homes and businesses across Bristol. Discover our values, meet our team, and see why we’re the city’s most trusted window cleaners." />
+        <meta name="description" content="Bristol Window Cleaners with over 20 years’ experience. Eco-friendly, fully insured team delivering streak-free results you can rely on." />
       </Head>
       <Header />
       <div>

@@ -83,7 +83,7 @@ export default function Gutter() {
   return (
     <>
       <Head title="Gutter Cleaning in Bristol | Expert, Fast & Reliable Service">
-        <meta name="description" content="Reliable Gutter Cleaning in Bristol. Eco-friendly, fully insured, with 20+ years of experience keeping homes safe from water damage. We remove moss, debris, and blockages, power-flush downpipes, and guarantee a spotless, mess-free finish. Free quotes available!" />
+        <meta name="description" content="Reliable Gutter Cleaning in Bristol. Eco-friendly, fully insured, with 20+ years of experience keeping homes safe from water damage. Free quotes!" />
       </Head>
       <Header />
       <section className={styles.blogHeroSection} aria-label="Gutter Clearing">
