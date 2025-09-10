@@ -151,3 +151,5 @@ export default function ActionsSection() {
 		</section>
 	);
 }
+
+// SCAN RESULT: This file contains 0 <h1> tags.
