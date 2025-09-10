@@ -33,7 +33,7 @@ export default function WhoWeAreSection() {
     <section className={styles.blogHeroSection} aria-label="Blog Hero">
       <div className={styles.blogHeroContent} ref={containerRef}>
         <div className={styles.textContainer} ref={textRef}>
-          <h1 className={styles.blogHeroTitle}>Who <span>We Are</span></h1>
+          <h1 className={styles.blogHeroTitle}>About Our Bristol Window Cleaning Team <span>- Who We Are</span></h1>
           <h2 className={styles.blogHeroSubtitle}>
            Invisible Window Cleaning is a small, independent window cleaning business serving <br />
            homes and businesses across the Bristol urban area.

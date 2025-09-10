@@ -74,9 +74,9 @@ export default function HeroSection() {
         <div className={styles.serviceContent}>
           <div ref={leftRef} className={styles.serviceContentLeft}>
             <h1>
-              <span ref={professionalRef} className={styles.serviceHeroTitle}>Professional </span>
-              <span ref={exteriorRef} className={styles.serviceHeroTitle}>Exterior Cleaning – Inside & Out</span>
-              </h1>
+              <span ref={professionalRef} className={styles.serviceHeroTitle}>Bristol Window Cleaning </span>
+              <span ref={exteriorRef} className={styles.serviceHeroTitle}>Professional Exterior Cleaning Services</span>
+            </h1>
             <h2 ref={subtitleRef} className={styles.serviceHeroSubtitle}>
               We offer a range of exterior cleaning services for homes and businesses in Bristol.
               Whether you need regular upkeep or a one-off spruce-up, we’ve got you covered.</h2>
