@@ -116,8 +116,8 @@ export default function TestimonialSection() {
   return (
     <section ref={sectionRef} className={styles.testimonialSection} aria-label="Customer Testimonials">
       <h1 className={styles.testimonialTitle}>
-        <span ref={titleRestRef}>What Our </span>
-        <span ref={customersRef}>Customers</span>
+        <span ref={titleRestRef}>Bristol Window Cleaning Reviews: </span>
+        <span ref={customersRef}>What Our Customers</span>
         <span ref={sayRef}> Say</span>
       </h1>
       <h2 ref={subtitleRef} className={styles.testimonialSubtitle}>Read what real clients have to say about our service. Their feedback highlights the quality and care we bring to every job.</h2>
