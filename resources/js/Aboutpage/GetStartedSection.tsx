@@ -53,10 +53,10 @@ export default function GetStartedSection() {
         <section ref={sectionRef} className={styles.getStartedSection}>
             <div className={styles.content}>
                 <div ref={leftRef} className={styles.contentLeft}>
-                    <h1>
+                    <h2>
                         <span className={styles.getStartedTitle}>Where It All</span>
                         <span className={styles.getStartedTitle}> Started</span>
-                    </h1>
+                    </h2>
                     <h2 className={styles.getStartedDescription}>
                     Invisible Window Cleaning was built on the foundations of a small round originally run by Keith,
                     a well-known window cleaner in South Bristol. For over 15 years, Keith cleaned homes around Bedminster,

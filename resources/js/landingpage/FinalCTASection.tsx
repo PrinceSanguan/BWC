@@ -59,9 +59,9 @@ export default function FinalCTASection() {
 
   return (
     <section ref={sectionRef} className={styles.finalCTASection} aria-label="Final Call to Action">
-      <h1 className={styles.finalCTATitle}>
+      <h2 className={styles.finalCTATitle}>
         Your Local <span className={styles.finalCTAGold}>Window Cleaner</span> in<br />South Bristol &amp; Beyond
-      </h1>
+      </h2>
       <div className={styles.finalCTASubtitle}>
         From homes to high-rises, we provide professional and reliable window cleaning services across Bristol.<br />
         Experience the difference a streak-free clean can make.

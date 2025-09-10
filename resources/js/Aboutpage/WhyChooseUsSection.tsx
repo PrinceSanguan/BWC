@@ -76,7 +76,7 @@ export default function WhyChooseUsSection() {
 
   return (
     <section ref={sectionRef} className={styles.whyChooseSection} aria-label="Why Choose Us">
-      <h1 ref={h2Ref} className={styles.whyChooseTitle}>Why Choose Us?</h1>
+      <h2 ref={h2Ref} className={styles.whyChooseTitle}>Why Choose Us?</h2>
       <div className={styles.whyChooseGrid}>
         {reasons.map((reason, i) => {
           const IconComponent = (Icons as any)[reason.icon] as React.ComponentType<any> | undefined;
