@@ -54,7 +54,7 @@ export default function HeroSection() {
       <div ref={heroRef} className={`${styles.heroGlassEffect} ${isBlurred ? styles.blurred : ''}`}>
         <div className={styles.heroLeftContent}>
           <h1>
-            <span ref={titleFirstRef} className={styles.heroTitle} style={{ opacity: 0 }}>Bristol's Most Trusted<br />Cleaning </span> 
+            <span ref={titleFirstRef} className={styles.heroTitle} style={{ opacity: 0 }}>Bristol's Most Trusted</span> 
             <span ref={titleSecondRef} className={styles.heroTitle} style={{ opacity: 0 }}> <br />Window Cleaning</span>
             <span ref={titleThirdRef} className={styles.heroTitle} style={{ opacity: 0 }}> Experts Since 2003</span>
           </h1>
