@@ -123,7 +123,7 @@ export default function AreasSection({ areaIndex = 0, areas = defaultAreas }: Ar
       </div>
 
       <div className={styles.containerRight}>
-        <h1 ref={servicesTitleRef} className={styles.serivecesTitle}>Popular Services</h1>
+        <h2 ref={servicesTitleRef} className={styles.serivecesTitle}>Popular Services</h2>
         <div>
           {currentArea.services && currentArea.services.length > 0 ? (
             <ul ref={servicesGridRef} className={styles.areasGrid}>

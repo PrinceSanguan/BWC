@@ -96,9 +96,9 @@ export default function CompareSection() {
 
   return (
     <section ref={sectionRef} className={styles.compareSection} aria-label="Before and After Comparison">
-      <h1 className={styles.compareTitle}>
-        What Our Customers Say
-      </h1>
+      <h2 className={styles.compareTitle}>
+        Customers Feedback
+      </h2>
       <h2 ref={subtitleRef} className={styles.compareSubtitle}>
         We're a local business built on trust and transparency. 
         Our focus is always on delivering top-tier service to every customer.

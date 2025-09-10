@@ -62,9 +62,9 @@ export default function ContactSection() {
       <div className={styles.contactContainer}>
         
         <div ref={leftRef} className={styles.contactInfoSection}>
-          <h1 className={styles.contactTitle}>
+          <h2 className={styles.contactTitle}>
             Get a <span>Free </span> Quote Today
-          </h1>
+          </h2>
           <h2 className={styles.contactInfo}>
             Note: We'll get back to you quickly with a no-obligation quote.
             <br />You don’t need to be home for most jobs — just provide access.</h2>
