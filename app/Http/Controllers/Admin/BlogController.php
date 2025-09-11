@@ -10,7 +10,11 @@ class BlogController extends Controller
 {
     public function index()
     {
-        return response()->json(Blog::all());
+        $blogs = Blog::all();
+        $blogs->each(function ($blog) {
+            $blog->image_url = $blog->image_url;
+        });
+        return response()->json($blogs);
     }
 
     public function store(Request $request)
@@ -28,8 +32,9 @@ class BlogController extends Controller
         } else {
             $data['image'] = null;
         }
-        $blog = Blog::create($data);
-        return response()->json($blog, 201);
+    $blog = Blog::create($data);
+    $blog->image_url = $blog->image_url;
+    return response()->json($blog, 201);
     }
 
     public function update(Request $request, Blog $blog)
@@ -47,8 +52,9 @@ class BlogController extends Controller
         } else {
             unset($data['image']); // Don't overwrite with null if not uploading
         }
-        $blog->update($data);
-        return response()->json($blog);
+    $blog->update($data);
+    $blog->image_url = $blog->image_url;
+    return response()->json($blog);
     }
 
     public function destroy(Blog $blog)
@@ -59,7 +65,8 @@ class BlogController extends Controller
 
         public function show($slug)
     {
-        $blog = Blog::where('slug', $slug)->firstOrFail();
-        return response()->json($blog);
+    $blog = Blog::where('slug', $slug)->firstOrFail();
+    $blog->image_url = $blog->image_url;
+    return response()->json($blog);
     }
 }
