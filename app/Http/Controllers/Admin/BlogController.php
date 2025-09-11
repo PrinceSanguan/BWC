@@ -19,6 +19,8 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'nullable|file|image|max:2048',
+            'meta_title' => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
         ]);
         if ($request->hasFile('image')) {
             $filename = $request->file('image')->store('images', 'public');
@@ -36,6 +38,8 @@ class BlogController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'image' => 'nullable|file|image|max:2048',
+            'meta_title' => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
         ]);
         if ($request->hasFile('image')) {
             $filename = $request->file('image')->store('images', 'public');
@@ -51,5 +55,11 @@ class BlogController extends Controller
     {
         $blog->delete();
         return response()->json(['success' => true]);
+    }
+
+        public function show($slug)
+    {
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        return response()->json($blog);
     }
 }

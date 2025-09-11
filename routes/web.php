@@ -130,6 +130,13 @@ Route::get('/blogs', function () {
   ]);
 });
 
+Route::get('/blogs/{slug}', function ($slug) {
+  $blog = Blog::where('slug', $slug)->firstOrFail();
+  return Inertia::render('Blogpage/BlogDetail', [
+    'blog' => $blog
+  ]);
+});
+
 // TEMP DEBUG ROUTE: View all blogs as JSON
 
 Route::get('/debug/blogs', function () {

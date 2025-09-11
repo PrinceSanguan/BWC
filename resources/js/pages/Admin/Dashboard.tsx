@@ -31,11 +31,13 @@ interface Blog {
     title: string;
     description: string;
     image?: string;
+    meta_title?: string;
+    meta_description?: string;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ user }) => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
-    const [form, setForm] = useState<{ title: string; description: string; image?: File | null }>({ title: '', description: '', image: null });
+    const [form, setForm] = useState<{ title: string; description: string; image?: File | null; meta_title?: string; meta_description?: string }>({ title: '', description: '', image: null, meta_title: '', meta_description: '' });
     const [editingId, setEditingId] = useState<number | null>(null);
     const [createModalOpen, setCreateModalOpen] = useState(false);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -66,11 +68,13 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
         const formData = new FormData();
         formData.append('title', form.title);
         formData.append('description', form.description);
+        formData.append('meta_title', form.meta_title ?? '');
+        formData.append('meta_description', form.meta_description ?? '');
         if (form.image) {
             formData.append('image', form.image);
         }
         const clearForm = () => {
-            setForm({ title: '', description: '', image: null });
+            setForm({ title: '', description: '', image: null, meta_title: '', meta_description: '' });
             if (fileInputRef.current) fileInputRef.current.value = '';
         };
         if (editingId) {
@@ -92,7 +96,13 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
     }
 
     function handleEdit(blog: Blog) {
-        setForm({ title: blog.title, description: blog.description, image: null });
+        setForm({
+            title: blog.title,
+            description: blog.description,
+            image: null,
+            meta_title: blog.meta_title || '',
+            meta_description: blog.meta_description || '',
+        });
         setEditingId(blog.id);
     }
 
@@ -113,7 +123,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                             <button onClick={() => setCreateModalOpen(true)} className="mb-6 bg-blue-600 text-white py-2 px-4 rounded self-start cursor-pointer">Create Blog</button>
                         )}
                         {/* Modal for creating a blog */}
-                        <Modal open={createModalOpen} onClose={() => { setCreateModalOpen(false); setForm({ title: '', description: '', image: null }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
+                        <Modal open={createModalOpen} onClose={() => { setCreateModalOpen(false); setForm({ title: '', description: '', image: null, meta_title: '', meta_description: '' }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
                             <div className="relative">
                                 <input
                                     name="image"
@@ -137,9 +147,13 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                                 )}
                                 <form onSubmit={e => { handleSubmit(e); setCreateModalOpen(false); }} className="flex flex-col gap-2">
                                     <h2 className="text-xl font-bold mb-2">Create Blog</h2>
-                                    <h1>
-                                        <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="border p-2 rounded w-full text-3xl font-bold" required />
-                                    </h1>
+                                    <label className="font-semibold">Meta Title</label>
+                                    <input name="meta_title" value={form.meta_title} onChange={handleChange} placeholder="Meta Title" className="border p-2 rounded w-full" maxLength={60} />
+                                    <label className="font-semibold">Meta Description</label>
+                                    <input name="meta_description" value={form.meta_description} onChange={handleChange} placeholder="Meta Description" className="border p-2 rounded w-full" maxLength={150} />
+                                    <label className="font-semibold">Title</label>
+                                    <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="border p-2 rounded w-full text-3xl font-bold" required />
+                                    <label className="font-semibold">Description</label>
                                     <ReactQuill
                                         value={form.description}
                                         onChange={handleDescriptionChange}
@@ -150,13 +164,13 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                                     />
                                     <div className="flex gap-2 mt-12">
                                         <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded cursor-pointer">Create Blog</button>
-                                        <button type="button" className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded cursor-pointer" onClick={() => { setCreateModalOpen(false); setForm({ title: '', description: '', image: null }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>Cancel</button>
+                                        <button type="button" className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded cursor-pointer" onClick={() => { setCreateModalOpen(false); setForm({ title: '', description: '', image: null, meta_title: '', meta_description: '' }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>Cancel</button>
                                     </div>
                                 </form>
                             </div>
                         </Modal>
                         {/* Modal for editing */}
-                        <Modal open={!!editingId} onClose={() => { setEditingId(null); setForm({ title: '', description: '', image: null }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
+                        <Modal open={!!editingId} onClose={() => { setEditingId(null); setForm({ title: '', description: '', image: null, meta_title: '', meta_description: '' }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
                             <div className="relative">
                                 <input
                                     name="image"
@@ -179,36 +193,13 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                                 )}
                                 <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                                     <h2 className="text-xl font-bold mb-2">Edit Blog</h2>
-                                    {/* Show current image if editing and blog has image */}
-                                    {/* Show preview of new image if selected, otherwise show current image */}
-                                    {editingId && (() => {
-                                        const blog = blogs.find(b => b.id === editingId);
-                                        if (form.image && typeof form.image !== 'string') {
-                                            // Show preview of newly selected image
-                                            return (
-                                                <img
-                                                    src={URL.createObjectURL(form.image)}
-                                                    alt={blog?.title || 'Preview'}
-                                                    className="mb-4 w-full h-32 object-cover rounded"
-                                                    style={{ marginTop: '40px' }}
-                                                />
-                                            );
-                                        } else if (blog && blog.image) {
-                                            // Show current image from storage
-                                            return (
-                                                <img
-                                                    src={`/storage/${blog.image}`}
-                                                    alt={blog.title}
-                                                    className="mb-4 w-full h-32 object-cover rounded"
-                                                    style={{ marginTop: '40px' }}
-                                                />
-                                            );
-                                        }
-                                        return null;
-                                    })()}
-                                    <h1>
-                                        <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="border p-2 rounded w-full text-3xl font-bold" required />
-                                    </h1>
+                                    <label className="font-semibold">Meta Title</label>
+                                    <input name="meta_title" value={form.meta_title} onChange={handleChange} placeholder="Meta Title" className="border p-2 rounded w-full" maxLength={60} />
+                                    <label className="font-semibold">Meta Description</label>
+                                    <input name="meta_description" value={form.meta_description} onChange={handleChange} placeholder="Meta Description" className="border p-2 rounded w-full" maxLength={150} />
+                                    <label className="font-semibold">Title</label>
+                                    <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="border p-2 rounded w-full text-3xl font-bold" required />
+                                    <label className="font-semibold">Description</label>
                                     <ReactQuill
                                         value={form.description}
                                         onChange={handleDescriptionChange}
@@ -219,7 +210,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                                     />
                                     <div className="flex gap-2 mt-12">
                                         <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded cursor-pointer">Update Blog</button>
-                                        <button type="button" className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded cursor-pointer" onClick={() => { setEditingId(null); setForm({ title: '', description: '', image: null }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>Cancel</button>
+                                        <button type="button" className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded cursor-pointer" onClick={() => { setEditingId(null); setForm({ title: '', description: '', image: null, meta_title: '', meta_description: '' }); if (fileInputRef.current) fileInputRef.current.value = ''; }}>Cancel</button>
                                     </div>
                                 </form>
                             </div>
