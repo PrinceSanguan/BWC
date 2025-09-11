@@ -4,28 +4,44 @@ import { animate } from 'animejs';
 
 const faqs = [
 	{
-		q: 'What areas do you cover?',
+		q: 'Which areas across Bristol do you cover?',
 		a: (
 			<>
-				We provide professional window cleaning services across South, East, Central, and North Bristol, covering both residential and commercial properties. Whether you’re in the city center, a surrounding suburb, or a nearby village, we can help. You can check our dedicated <b>Areas Page</b> to see the full list of locations we serve and find out if we cover your specific postcode.
+				Our domestic window cleaning service covers all Bristol postcodes including Clifton, Redland, Southville, Bedminster, St. Pauls, Easton, and surrounding areas. Whether you need residential window cleaners Bristol city center or commercial window cleaning services in outer Bristol, our fully insured window cleaning services reach every corner of our beautiful city.
 			</>
 		),
 	},
 	{
-		q: 'Do I need to be at home during the cleaning?',
-		a: '',
+		q: 'Do I need to be home when you clean?',
+		a: (
+			<>
+				Absolutely not! Our professional window cleaning services are designed for your convenience. We'll send text reminders, complete your affordable window cleaning service to perfection, and you can pay securely online. This flexible approach makes us the best window cleaning Bristol choice for busy homeowners and commercial clients alike.
+			</>
+		),
 	},
 	{
-		q: 'Can I get a quote for more than one cleaning service at the same time?',
-		a: '',
+		q: 'Can you provide multiple cleaning services together?',
+		a: (
+			<>
+				Yes! Beyond our core Bristol window cleaning services, we offer gutter cleaning and maintenance, solar panel cleaning Bristol, signage cleaning, and window frame and sill cleaning. Bundling services provides better value and ensures your entire property exterior receives our eco-friendly window cleaning solutions treatment in one convenient visit.
+			</>
+		),
 	},
 	{
-		q: 'What equipment do you use?',
-		a: '',
+		q: 'What makes your cleaning method special?',
+		a: (
+			<>
+				We use advanced ladder-free window cleaning technology with environmentally friendly window cleaning solutions. Our reach and wash system delivers streak-free window cleaning results while prioritizing health and safety window cleaning standards. This modern approach combined with hard water stain removal expertise ensures consistently superior, spotless results.
+			</>
+		),
 	},
 	{
-		q: 'How long will the cleaning take?',
-		a: '',
+		q: 'How quickly can you start cleaning my windows?',
+		a: (
+			<>
+				We offer same day window cleaning Bristol appointments when possible! Our efficient scheduling means most clients receive service within 48-72 hours. For contractual window cleaning Bristol arrangements, we provide flexible timing that works around your schedule while maintaining our reputation for reliable, professional service.
+			</>
+		),
 	},
 ];
 
