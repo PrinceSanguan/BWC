@@ -20,7 +20,18 @@ export default function BlogDetail({ blog }: BlogDetailProps) {
         <meta name="description" content={blog.meta_description || blog.description.replace(/<[^>]+>/g, '').slice(0, 150)} />
       </Head>
       <Header />
-      <main style={{ maxWidth: 900, margin: '0 auto', padding: '2rem 1rem', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px rgba(0,0,0,0.07)' }}>
+      <main
+        style={{
+          maxWidth: 900,
+          margin: '40px auto',
+          padding: '2rem 1rem',
+          background: '#fff',
+          borderRadius: 12,
+          boxShadow: '0 2px 16px rgba(0,0,0,0.07)',
+          marginTop: 40,
+          marginBottom: 40,
+        }}
+      >
         {blog.image && (
           <img src={`/storage/${blog.image}`} alt={blog.title} style={{ width: '100%', height: 'auto', borderRadius: 8, marginBottom: 24 }} />
         )}
