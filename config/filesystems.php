@@ -39,9 +39,13 @@ return [
         ],
 
         'public' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'driver' => 's3',
+            'key' => '36f1649377755360df410c5ca9ab8e8e',
+            'secret' => '3f5d31712493ae9ff9b3ffdaf7ba9850efb87da174f1e59e33f11ba8ed5b1db4',
+            'region' => 'auto',
+            'bucket' => 'fls-9fdbe290-e20a-4f29-8871-690e18c75edb',
+            'endpoint' => 'https://367be3a2035528943240074d0096e0cd.r2.cloudflarestorage.com',
+            'use_path_style_endpoint' => false,
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Blog extends Model
 {
@@ -19,7 +21,13 @@ class Blog extends Model
 
     public function getImageUrlAttribute()
     {
-        return $this->image ? asset('storage/' . $this->image) : null;
+        if (!$this->image) {
+            return null;
+        }
+
+        // For Laravel Cloud with Cloudflare R2
+        $endpoint = 'https://367be3a2035528943240074d0096e0cd.r2.cloudflarestorage.com';
+        return $endpoint . '/' . $this->image;
     }
 
     public static function boot()
