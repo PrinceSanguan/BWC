@@ -51,6 +51,13 @@ return [
             'report' => false,
         ],
 
+        'blog-image' => [
+            'driver' => 'local',
+            'root' => public_path('upload-blog'),
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

@@ -35,6 +35,7 @@ interface Blog {
     image?: string;
     meta_title?: string;
     meta_description?: string;
+    image_url?: string;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ user }) => {
@@ -346,7 +347,7 @@ const Dashboard: React.FC<DashboardProps> = ({ user }) => {
                                 <div key={blog.id} className="rounded border bg-white p-3 shadow sm:p-4 dark:bg-gray-800">
                                     {blog.image && (
                                         <img
-                                            src={`/storage/${blog.image}`}
+                                            src={blog.image_url || `/upload-blog/${blog.image}`}
                                             alt={blog.title}
                                             className="mb-2 h-32 w-full rounded object-cover sm:h-32"
                                         />

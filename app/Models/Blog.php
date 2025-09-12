@@ -25,9 +25,7 @@ class Blog extends Model
             return null;
         }
 
-        // For Laravel Cloud with Cloudflare R2
-        $endpoint = 'https://367be3a2035528943240074d0096e0cd.r2.cloudflarestorage.com';
-        return $endpoint . '/' . $this->image;
+        return asset('upload-blog/' . $this->image);
     }
 
     public static function boot()

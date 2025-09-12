@@ -27,14 +27,14 @@ class BlogController extends Controller
             'meta_description' => 'nullable|string|max:255',
         ]);
         if ($request->hasFile('image')) {
-            $filename = $request->file('image')->store('images', 'public');
+            $filename = $request->file('image')->store('', 'blog-image');
             $data['image'] = $filename;
         } else {
             $data['image'] = null;
         }
-    $blog = Blog::create($data);
-    $blog->image_url = $blog->image_url;
-    return response()->json($blog, 201);
+        $blog = Blog::create($data);
+        $blog->image_url = $blog->image_url;
+        return response()->json($blog, 201);
     }
 
     public function update(Request $request, Blog $blog)
@@ -47,14 +47,14 @@ class BlogController extends Controller
             'meta_description' => 'nullable|string|max:255',
         ]);
         if ($request->hasFile('image')) {
-            $filename = $request->file('image')->store('images', 'public');
+            $filename = $request->file('image')->store('', 'blog-image');
             $data['image'] = $filename;
         } else {
             unset($data['image']); // Don't overwrite with null if not uploading
         }
-    $blog->update($data);
-    $blog->image_url = $blog->image_url;
-    return response()->json($blog);
+        $blog->update($data);
+        $blog->image_url = $blog->image_url;
+        return response()->json($blog);
     }
 
     public function destroy(Blog $blog)
@@ -63,10 +63,10 @@ class BlogController extends Controller
         return response()->json(['success' => true]);
     }
 
-        public function show($slug)
+    public function show($slug)
     {
-    $blog = Blog::where('slug', $slug)->firstOrFail();
-    $blog->image_url = $blog->image_url;
-    return response()->json($blog);
+        $blog = Blog::where('slug', $slug)->firstOrFail();
+        $blog->image_url = $blog->image_url;
+        return response()->json($blog);
     }
 }

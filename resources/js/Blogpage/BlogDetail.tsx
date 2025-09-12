@@ -30,7 +30,11 @@ export default function BlogDetail({ blog }: BlogDetailProps) {
                 }}
             >
                 {blog.image && (
-                    <img src={blog.image_url} alt={blog.title} style={{ width: '100%', height: 'auto', borderRadius: 8, marginBottom: 24 }} />
+                    <img
+                        src={blog.image_url || `/upload-blog/${blog.image}`}
+                        alt={blog.title}
+                        style={{ width: '100%', height: 'auto', borderRadius: 8, marginBottom: 24 }}
+                    />
                 )}
                 <h1 style={{ fontSize: '2.2em', fontWeight: 700, marginBottom: 16 }}>{blog.title}</h1>
                 <div style={{ color: '#222', fontSize: '1.13rem', lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: blog.description }} />
