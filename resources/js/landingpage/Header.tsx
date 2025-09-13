@@ -62,6 +62,11 @@ export default function Header() {
     });
   };
 
+  // Handler to navigate to /contact
+  const handleCTAClick = () => {
+    window.location.href = '/contact';
+  };
+
   return (
     <>
       <HeaderBanner />
@@ -79,7 +84,14 @@ export default function Header() {
           <a href="/blogs">Blogs</a>
         </nav>
         <div className={styles.hamburgerMenuOnly}><HamburgerMenu /></div>
-        <button ref={buttonRef} className={styles.ctaBtn} type="button" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <button
+          ref={buttonRef}
+          className={styles.ctaBtn}
+          type="button"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleCTAClick}
+        >
           <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span>
           <span ref={(el) => { textRefs.current[0] = el; }} >Get</span>
           <span ref={(el) => { textRefs.current[1] = el; }} >a</span>

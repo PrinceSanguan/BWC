@@ -43,12 +43,22 @@ export default function WhoWeAreSection() {
             treating customers well, and being easy to work with.
            </h2>
           <div className={styles.buttonGroup}>
-            <button className={styles.heroButton} aria-label="Get a free quote">
-            <button className={styles.ctaBtn} type="button">
-            <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+            {/* Handler to navigate to /contact */}
+            <button
+              className={styles.ctaBtn}
+              type="button"
+              aria-label="Get a free quote"
+              onClick={() => { window.location.href = '/contact'; }}
+            >
+              <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
             </button>
+            <button
+              className={styles.ctaBtn}
+              type="button"
+              onClick={() => { window.location.href = '/services'; }}
+            >
+              See Our Services
             </button>
-            <button className={styles.ctaBtn}>See Our Services</button>
           </div>
         </div>
         <div ref={imageRef}>

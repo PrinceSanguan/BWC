@@ -57,6 +57,11 @@ export default function FinalCTASection() {
     };
   }, []);
 
+  // Handler to navigate to /contact
+  const handleCTAClick = () => {
+    window.location.href = '/contact';
+  };
+
   return (
     <section ref={sectionRef} className={styles.finalCTASection} aria-label="Final Call to Action">
       <h2 className={styles.finalCTATitle}>
@@ -66,7 +71,11 @@ export default function FinalCTASection() {
         From homes to high-rises, we provide professional and reliable window cleaning services across Bristol.<br />
         Experience the difference a streak-free clean can make.
       </div>
-      <button className={styles.ctaBtn} type="button">
+      <button
+        className={styles.ctaBtn}
+        type="button"
+        onClick={handleCTAClick}
+      >
         <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
       </button>
       <button

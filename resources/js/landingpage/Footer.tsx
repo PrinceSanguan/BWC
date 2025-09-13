@@ -91,17 +91,17 @@ export default function Footer() {
           <div className={styles.footerLinksWrap}>
             <div className={styles.footerLinksCol}>
               <div className={styles.footerLinksTitle}><b>Company</b></div>
-              <a href="#" className={styles.footerLink}>Home</a>
-              <a href="#" className={styles.footerLink}>About Us</a>
-              <a href="#" className={styles.footerLink}>Services</a>
-              <a href="#" className={styles.footerLink}>Contact</a>
+              <a href="/" className={styles.footerLink}>Home</a>
+              <a href="/about" className={styles.footerLink}>About Us</a>
+              <a href="/services" className={styles.footerLink}>Services</a>
+              <a href="/contact" className={styles.footerLink}>Contact</a>
             </div>
             <div className={styles.footerLinksCol}>
               <div className={styles.footerLinksTitle}><b>Services</b></div>
-              <span className={styles.footerLink}>Domestic Window Cleaning</span>
-              <span className={styles.footerLink}>Commercial Window Cleaning</span>
-              <span className={styles.footerLink}>Gutter Clearing</span>
-              <span className={styles.footerLink}>Soffit, Fascia, &amp; Gutter Face Cleaning</span>
+              <a href="/services/domestic" className={styles.footerLink}>Domestic Window Cleaning</a>
+              <a href="/services/commercial" className={styles.footerLink}>Commercial Window Cleaning</a>
+              <a href="/services/gutter" className={styles.footerLink}>Gutter Clearing</a>
+              <a href="/services/soffit-fascia" className={styles.footerLink}>Soffit, Fascia, &amp; Gutter Face Cleaning</a>
             </div>
           </div>
         </div>

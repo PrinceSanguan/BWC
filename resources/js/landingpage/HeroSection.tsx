@@ -49,9 +49,14 @@ export default function HeroSection() {
     }
   }, []);
 
+  // Handler to navigate to /contact
+  const handleCTAClick = () => {
+    window.location.href = '/contact';
+  };
+
   return (
     <section className={styles.heroSection} aria-label="Hero">
-      <div ref={heroRef} className={`${styles.heroGlassEffect} ${isBlurred ? styles.blurred : ''}`}>
+      <div ref={heroRef} className={`${styles.heroGlassEffect} ${isBlurred ? styles.blurred : ''}`}> 
         <div className={styles.heroLeftContent}>
           <h1>
             <span ref={titleFirstRef} className={styles.heroTitle} style={{ opacity: 0 }}>Bristol's Most Trusted</span> 
@@ -64,7 +69,13 @@ export default function HeroSection() {
             <li>Guaranteed finish.</li>
             <li>Text reminders before every clean</li>
           </ul>
-          <button ref={buttonRef} className={styles.ctaBtn} type="button" aria-label="Get a free quote">
+          <button
+            ref={buttonRef}
+            className={styles.ctaBtn}
+            type="button"
+            aria-label="Get a free quote"
+            onClick={handleCTAClick}
+          >
             <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
           </button>
           <h3 ref={bottomTextRef} className={styles.heroBottomText}>Fast replies | No obligation</h3>

@@ -93,7 +93,15 @@ export default function TeamSection() {
             <div className={styles.teamAvatar}>{member.initials}</div>
             <div className={styles.teamName}>{member.name}</div>
             <div className={styles.teamRole}>{member.role}</div>
-            <div><button className={styles.teamButton}>Contact</button></div>
+            <div>
+              <button
+                className={styles.teamButton}
+                type="button"
+                onClick={() => { window.location.href = '/contact'; }}
+              >
+                Contact
+              </button>
+            </div>
           </div>
         ))}
       </div>

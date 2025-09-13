@@ -112,7 +112,13 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.servicesSection} aria-label="Our Services" style={{ background: '#fff' }}>
+    <section
+      ref={sectionRef}
+      className={styles.servicesSection}
+      id="services-section"
+      aria-label="Our Services"
+      style={{ background: '#fff' }}
+    >
       <h2 ref={titleRef} className={styles.servicesTitle}>Our Services</h2>
       <div className={styles.servicesIntro}>
         {services.map((service, i) => (

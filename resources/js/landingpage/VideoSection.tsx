@@ -76,6 +76,11 @@ export default function VideoSection() {
     };
   }, []);
 
+  // Handler to navigate to /contact
+  const handleCTAClick = () => {
+    window.location.href = '/contact';
+  };
+
   return (
     <section ref={sectionRef} className={styles.videoSection} aria-label="Your Local Cleaners at Work">
       <h2 className={styles.videoTitle}>
@@ -96,10 +101,21 @@ export default function VideoSection() {
         ></iframe>
       </div>
       <div className={styles.buttonGroup}>
-        <button className={styles.ctaBtn} type="button" aria-label="Get a free quote">
+        <button
+          className={styles.ctaBtn}
+          type="button"
+          aria-label="Get a free quote"
+          onClick={handleCTAClick}
+        >
           <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
         </button>
-        <button className={styles.ctaBtn}>See Our Services</button>
+        <button
+          className={styles.ctaBtn}
+          type="button"
+          onClick={() => { window.location.href = '/services'; }}
+        >
+          See Our Services
+        </button>
       </div>
     </section>
   );

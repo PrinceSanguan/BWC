@@ -82,11 +82,28 @@ export default function HeroSection() {
               Whether you need regular upkeep or a one-off spruce-up, we’ve got you covered.</h2>
 
           <div className={styles.buttonGroup}>
-            <button ref={button1Ref} className={styles.ctaBtn} type="button">
-            <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
+            <button
+              ref={button1Ref}
+              className={styles.ctaBtn}
+              type="button"
+              onClick={() => { window.location.href = '/contact'; }}
+            >
+              <span className={styles.ctaIcon} aria-hidden="true">&#10077;</span> Get a Free Quote
             </button>
-            <button ref={button2Ref} className={styles.ctaBtn}>See Our Services</button>
-            </div>
+            <button
+              ref={button2Ref}
+              className={styles.ctaBtn}
+              type="button"
+              onClick={() => {
+                const section = document.getElementById('services-section');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              See Our Services
+            </button>
+          </div>
           </div>
           <div ref={rightRef} className={styles.serviceContentRight}>
             <img src={Img} alt="Service Hero" className={styles.serviceHeroImage} />
